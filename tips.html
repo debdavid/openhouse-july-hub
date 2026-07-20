@@ -1,1 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Step 4 · Tips &amp; Prompts — UiLab Open House July 2026</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="copy-toast" id="toast">Copied!</div>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="ui">Ui</span><span class="lab">Lab Open House · July 2026</span></a>
+  <div class="nav-links">
+    <a href="index.html">1 · System Instruction</a>
+    <a href="videos.html">2 · Training Videos</a>
+    <a href="build-guide.html">3 · Build Guide</a>
+    <a href="tips.html" class="active">4 · Tips &amp; Prompts</a>
+  </div>
+</nav>
+<div class="grad-bar"></div>
+<div class="hero">
+  <div class="eyebrow">Tips, prompts &amp; quality checks</div>
+  <h1>Get better results <span>every time.</span></h1>
+  <p>Practical tips for improving your prompts, sector-specific starter examples, and a quality check to run before you use any agent output professionally.</p>
+</div>
+<main class="main">
 
+  <div class="section-eyebrow">Prompt tips</div>
+  <h2>Four things that improve every agent interaction.</h2>
+  <div class="grid2">
+    <div class="card card-burg">
+      <h3>Lead with the outcome, not the topic</h3>
+      <p>Instead of: <em>"Create a progress note."</em></p>
+      <p>Try: <em>"Create an NDIS progress note for a session where [participant] worked on Goal 2 (community participation). Observations: [notes]. Format: three paragraphs, plain English, no jargon."</em></p>
+      <p>The outcome tells the agent what the output needs to achieve. The topic alone does not.</p>
+    </div>
+    <div class="card card-water">
+      <h3>Name the audience every time</h3>
+      <p>Even though your system instruction includes audience context, naming the specific audience in each request sharpens the output.</p>
+      <p>Add: <em>"Audience: family members of a resident in aged care — warm, plain English, no clinical terminology."</em></p>
+    </div>
+    <div class="card card-sum">
+      <h3>Give the agent the most important thing first</h3>
+      <p>For reports and summaries: state the key finding or decision upfront in your brief. The agent will treat it as the lead.</p>
+      <p>Example: <em>"The key finding is a 22% increase in response time. Build the status update narrative around what this means for the project timeline."</em></p>
+    </div>
+    <div class="card card-land">
+      <h3>Use the quality check as a prompt</h3>
+      <p>If the first output is not quite right, ask the agent to apply the P-PASS filter before rewriting:</p>
+      <p><em>"Before you rewrite this, check it against P-PASS: Purpose, Persuasion, Audience, Safety, Standards. Tell me what each check reveals, then rewrite."</em></p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section-eyebrow">Starter prompts by sector</div>
+  <h2>Copy and adapt for your agent.</h2>
+
+  <div class="card card-burg" style="margin-bottom:12px;">
+    <div class="badge b-burg">Health research</div>
+    <ul class="ul-clean">
+      <li>Summarise the following research papers for a non-specialist stakeholder audience. Flag the three most significant findings and any conflicts between papers: [paste abstracts or papers]</li>
+      <li>Draft a plain English grant application narrative section on [topic] using the following evidence: [paste data and citations]</li>
+    </ul>
+  </div>
+  <div class="card card-water" style="margin-bottom:12px;">
+    <div class="badge b-water">Engineering &amp; consulting</div>
+    <ul class="ul-clean">
+      <li>Draft a weekly project status update for [project name] using the following meeting notes and milestone tracker. Flag risks and blockers. Audience: [client name] — professional, concise: [paste notes]</li>
+      <li>Summarise the following site report into a two-paragraph executive summary for the client. Lead with progress, close with the one item requiring a decision: [paste report]</li>
+    </ul>
+  </div>
+  <div class="card card-land" style="margin-bottom:12px;">
+    <div class="badge b-land">Disability &amp; aged care</div>
+    <ul class="ul-clean">
+      <li>Draft an NDIS progress note for a session with [participant ID]. Goals worked on: [Goal 1, Goal 2]. Observations: [notes]. Format: three paragraphs, NDIS-aligned language, no jargon</li>
+      <li>Draft a family update for [resident reference] covering the week of [date]. Highlights: [list]. Tone: warm, person-centred, no clinical terminology</li>
+    </ul>
+  </div>
+  <div class="card card-sum" style="margin-bottom:12px;">
+    <div class="badge b-sum">Real estate</div>
+    <ul class="ul-clean">
+      <li>Write a property listing for [address]. Bedrooms: [X]. Key features: [list]. Target buyer: [profile]. Brand tone: professional and aspirational. Maximum 120 words</li>
+      <li>Draft a vendor campaign update for week [X] of [Y] weeks. Enquiries: [X]. Inspections: [X]. Feedback themes: [notes]. Tone: transparent and confident</li>
+    </ul>
+  </div>
+  <div class="card card-jac" style="margin-bottom:12px;">
+    <div class="badge b-jac">Self-employed &amp; SME</div>
+    <ul class="ul-clean">
+      <li>Analyse my inbox from the past 24 hours and identify: (1) messages requiring a response today, (2) messages requiring a response this week, (3) messages that can wait. Draft a response for each priority-1 message in my professional voice: [paste email content]</li>
+      <li>Draft a client proposal for [client name]. Problem: [describe]. Proposed solution: [describe]. Investment: [amount]. Timeline: [dates]. Format: professional, lead with the client's problem</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section-eyebrow">Quality check — P-PASS</div>
+  <h2>Run this before using any agent output professionally.</h2>
+  <p>Five questions. If any answer is no, the output needs work before you use it.</p>
+
+  <div class="step-row"><div class="step-n">P</div><div class="step-c"><h3>Purpose — does every part serve the stated aim?</h3><p>Read each section. Ask: if I removed this, would the audience miss anything essential? If not, it does not have a purpose and should be removed or merged.</p></div></div>
+  <div class="step-row"><div class="step-n">P</div><div class="step-c"><h3>Persuasion — does the structure earn the argument?</h3><p>Read it as a narrative. Does it build logically toward the conclusion or recommendation? Would a sceptical reader find it convincing? If the ending feels unsupported, the middle needs more evidence.</p></div></div>
+  <div class="step-row"><div class="step-n">A</div><div class="step-c"><h3>Audience — is the language right for this specific audience?</h3><p>Read one section aloud as if you are the person with the least familiarity with the subject. Is it still clear? If not, it needs plain English revision.</p></div></div>
+  <div class="step-row"><div class="step-n">S</div><div class="step-c"><h3>Safety — are there any risks in this content?</h3><p>Check for: unverified claims, content that could mislead, anything legally or reputationally sensitive, and anything that could be taken out of context. The agent does not know your legal obligations — you do.</p></div></div>
+  <div class="step-row"><div class="step-n">S</div><div class="step-c"><h3>Standards — does it meet your professional standard?</h3><p>Check: consistent format, appropriate length, correct terminology, alignment with any regulatory or organisational requirements. The agent applies the standards you described — verify they have been followed.</p></div></div>
+
+  <div style="margin-top:28px;display:flex;justify-content:flex-start;">
+    <a href="build-guide.html" style="color:var(--burg);text-decoration:none;font-family:'Syne',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;">← Back: Build Guide</a>
+  </div>
+</main>
+<footer>
+  <p>UiLab Open House · July 2026 · Logan City Council</p>
+  <nav class="footer-nav">
+    <a href="index.html">System Instruction</a>
+    <a href="videos.html">Training Videos</a>
+    <a href="build-guide.html">Build Guide</a>
+    <a href="tips.html">Tips &amp; Prompts</a>
+  </nav>
+</footer>
+<script>function cp(id,btn){navigator.clipboard.writeText(document.getElementById(id).innerText).then(()=>{btn.textContent='Copied!';btn.classList.add('copied');const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>{btn.textContent='Copy';btn.classList.remove('copied');t.classList.remove('show');},2500);});}</script>
+</body>
+</html>
