@@ -6,125 +6,138 @@
 <title>UiLab Resource Hub — July 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background-color: #013053; color: #F0EDE8; font-family: 'PP Neue Montreal', 'Inter', 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; min-height: 100vh; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background-color:#013053; color:#F0EDE8; font-family:'PP Neue Montreal','Inter','Helvetica Neue',Arial,sans-serif; line-height:1.6; min-height:100vh; }
 
-  /* HEADER */
-  header { background: linear-gradient(135deg, #4C0037 0%, #013053 60%); border-bottom: 2px solid #DD60FF; padding: 32px 40px 24px; }
-  .header-label { font-family: 'Roboto Mono', monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #DD60FF; margin-bottom: 8px; }
-  header h1 { font-size: 28px; font-weight: 600; color: #F0EDE8; letter-spacing: -0.02em; margin-bottom: 4px; }
-  header p { font-size: 13px; color: #67DAFF; font-family: 'Roboto Mono', monospace; }
+  header { background:linear-gradient(135deg,#4C0037 0%,#013053 60%); border-bottom:2px solid #DD60FF; padding:32px 40px 24px; }
+  .header-label { font-family:'Roboto Mono',monospace; font-size:10px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:#DD60FF; margin-bottom:8px; }
+  header h1 { font-size:28px; font-weight:600; color:#F0EDE8; letter-spacing:-0.02em; margin-bottom:4px; }
+  header p { font-size:13px; color:#67DAFF; font-family:'Roboto Mono',monospace; }
 
-  /* MAIN */
-  .content { max-width: 860px; margin: 0 auto; padding: 40px 40px 80px; }
+  .content { max-width:860px; margin:0 auto; padding:40px 40px 80px; }
 
-  /* INTRO */
-  .intro { margin-bottom: 40px; }
-  .intro p { font-size: 15px; color: #C8D8E4; margin-bottom: 12px; }
-
-  /* CALLOUTS */
-  .callout { border-radius: 6px; padding: 14px 18px; margin-bottom: 20px; font-size: 13px; color: #C8D8E4; }
-  .callout-warning { background: rgba(255,99,37,0.1); border-left: 3px solid #FF6325; }
-  .callout-info    { background: rgba(103,218,255,0.08); border-left: 3px solid #67DAFF; }
-  .callout-success { background: rgba(2,81,32,0.2); border-left: 3px solid #3ECFA0; }
-  .callout strong  { color: #F0EDE8; }
+  .callout { border-radius:6px; padding:14px 18px; margin-bottom:20px; font-size:13px; color:#C8D8E4; line-height:1.6; }
+  .callout-warning { background:rgba(255,99,37,0.1); border-left:3px solid #FF6325; }
+  .callout-info    { background:rgba(103,218,255,0.08); border-left:3px solid #67DAFF; }
+  .callout-success { background:rgba(2,81,32,0.2); border-left:3px solid #3ECFA0; }
+  .callout strong  { color:#F0EDE8; }
 
   /* ACCORDION */
-  .accordion { margin-bottom: 12px; border: 1px solid rgba(221,96,255,0.25); border-radius: 10px; overflow: hidden; }
-  .accordion-header { width: 100%; background: rgba(221,96,255,0.08); border: none; cursor: pointer; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; text-align: left; transition: background 0.2s; }
-  .accordion-header:hover { background: rgba(221,96,255,0.15); }
-  .accordion-header.open { background: rgba(221,96,255,0.18); border-bottom: 1px solid rgba(221,96,255,0.25); }
-  .accordion-left { display: flex; align-items: center; gap: 14px; }
-  .phase-num { font-family: 'Roboto Mono', monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #DD60FF; background: rgba(221,96,255,0.15); border: 1px solid rgba(221,96,255,0.3); border-radius: 4px; padding: 3px 10px; white-space: nowrap; }
-  .accordion-title { font-size: 16px; font-weight: 600; color: #F0EDE8; }
-  .accordion-subtitle { font-size: 12px; color: #9BB8CC; margin-top: 2px; font-family: 'Roboto Mono', monospace; }
-  .chevron { color: #DD60FF; font-size: 18px; transition: transform 0.25s; flex-shrink: 0; }
-  .accordion-header.open .chevron { transform: rotate(180deg); }
-  .accordion-body { display: none; padding: 28px 24px; background: rgba(0,0,0,0.15); }
-  .accordion-body.open { display: block; }
+  .accordion { margin-bottom:12px; border:1px solid rgba(221,96,255,0.25); border-radius:10px; overflow:hidden; }
+  .accordion-header { width:100%; background:rgba(221,96,255,0.08); border:none; cursor:pointer; padding:18px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px; text-align:left; transition:background 0.2s; }
+  .accordion-header:hover { background:rgba(221,96,255,0.15); }
+  .accordion-header.open { background:rgba(221,96,255,0.18); border-bottom:1px solid rgba(221,96,255,0.25); }
+  .accordion-left { display:flex; align-items:center; gap:14px; }
+  .phase-num { font-family:'Roboto Mono',monospace; font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#DD60FF; background:rgba(221,96,255,0.15); border:1px solid rgba(221,96,255,0.3); border-radius:4px; padding:3px 10px; white-space:nowrap; }
+  .accordion-title { font-size:16px; font-weight:600; color:#F0EDE8; }
+  .accordion-subtitle { font-size:12px; color:#9BB8CC; margin-top:2px; font-family:'Roboto Mono',monospace; }
+  .chevron { color:#DD60FF; font-size:18px; transition:transform 0.25s; flex-shrink:0; }
+  .accordion-header.open .chevron { transform:rotate(180deg); }
+  .accordion-body { display:none; padding:28px 24px; background:rgba(0,0,0,0.15); }
+  .accordion-body.open { display:block; }
 
-  /* STEPS */
-  .step-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 20px; }
-  .step-item { display: flex; gap: 14px; align-items: flex-start; }
-  .step-dot { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: #DD60FF; color: #013053; font-family: 'Roboto Mono', monospace; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
-  .step-body { flex: 1; }
-  .step-body strong { display: block; font-size: 14px; color: #F0EDE8; margin-bottom: 3px; }
-  .step-body p { font-size: 13px; color: #9BB8CC; margin: 0; }
+  h3 { font-family:'Roboto Mono',monospace; font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#67DAFF; margin:24px 0 10px; }
+  h3:first-child { margin-top:0; }
+  .divider { border:none; border-top:1px solid rgba(103,218,255,0.08); margin:20px 0; }
 
-  /* PROMPTS */
-  .prompt-block { background: #010e1c; border: 1px solid rgba(103,218,255,0.2); border-radius: 6px; margin-bottom: 16px; overflow: hidden; }
-  .prompt-header { display: flex; justify-content: space-between; align-items: center; padding: 9px 14px; background: rgba(103,218,255,0.06); border-bottom: 1px solid rgba(103,218,255,0.15); }
-  .prompt-label { font-family: 'Roboto Mono', monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #67DAFF; }
-  .copy-btn { background: rgba(221,96,255,0.15); border: 1px solid rgba(221,96,255,0.4); color: #DD60FF; font-family: 'Roboto Mono', monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 4px 12px; border-radius: 4px; cursor: pointer; transition: all 0.2s; }
-  .copy-btn:hover { background: #DD60FF; color: #013053; }
-  .copy-btn.copied { background: #025120; border-color: #3ECFA0; color: #3ECFA0; }
-  .prompt-text { padding: 14px 16px; font-family: 'Roboto Mono', monospace; font-size: 11.5px; line-height: 1.75; color: #C8D8E4; white-space: pre-wrap; word-break: break-word; max-height: 340px; overflow-y: auto; }
+  /* AGENT BRIEF FORM */
+  .field-block { margin-bottom:14px; }
+  .field-label { font-family:'Roboto Mono',monospace; font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#DD60FF; margin-bottom:4px; }
+  .field-hint { font-size:12px; color:#9BB8CC; margin-bottom:6px; line-height:1.5; }
+  .field-block textarea, .field-block input[type=text] {
+    width:100%; background:rgba(255,255,255,0.04); border:1px solid rgba(103,218,255,0.2);
+    border-radius:6px; padding:10px 13px; font-family:'PP Neue Montreal','Inter',Arial,sans-serif;
+    font-size:13px; color:#F0EDE8; line-height:1.6; resize:vertical; outline:none;
+    transition:border-color 0.2s;
+  }
+  .field-block textarea:focus, .field-block input[type=text]:focus { border-color:#67DAFF; background:rgba(103,218,255,0.05); }
+  .field-block textarea { min-height:72px; }
+  .field-block textarea.tall { min-height:110px; }
+  .field-block textarea.short { min-height:52px; }
 
-  /* SECTION HEADINGS */
-  h3 { font-family: 'Roboto Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #67DAFF; margin: 24px 0 10px; }
-  h3:first-child { margin-top: 0; }
-
-  .divider { border: none; border-top: 1px solid rgba(103,218,255,0.08); margin: 16px 0; }
-
-  /* OPPORTUNITY CARDS */
-  .opp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; margin-bottom: 16px; }
-  .opp-card { background: rgba(255,255,255,0.03); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; border: 1px solid rgba(221,96,255,0.15); }
-  .opp-head { padding: 14px 14px 10px; }
-  .opp-num { font-family: 'Roboto Mono', monospace; font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 4px; opacity: 0.8; }
-  .opp-sector { font-family: 'Roboto Mono', monospace; font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; color: #9BB8CC; }
-  .opp-title { font-size: 14px; font-weight: 600; color: #F0EDE8; line-height: 1.3; margin-bottom: 4px; }
-  .opp-role { font-size: 11px; color: #9BB8CC; font-family: 'Roboto Mono', monospace; }
-  .opp-body { flex: 1; }
-  .opp-field { display: flex; border-top: 1px solid rgba(103,218,255,0.07); }
-  .opp-lbl { font-family: 'Roboto Mono', monospace; font-size: 9px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 8px 10px; min-width: 100px; max-width: 100px; line-height: 1.3; background: rgba(0,0,0,0.2); color: #67DAFF; border-right: 1px solid rgba(103,218,255,0.07); }
-  .opp-val { font-size: 12px; padding: 8px 10px; color: #C8D8E4; line-height: 1.5; }
-  .opp-foot { padding: 10px 14px 12px; border-top: 1px solid rgba(221,96,255,0.15); }
-  .opp-foot-lbl { font-family: 'Roboto Mono', monospace; font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #DD60FF; margin-bottom: 3px; }
-  .opp-agent { font-size: 13px; font-weight: 600; color: #F0EDE8; margin-bottom: 2px; }
-  .opp-success { font-size: 11px; color: #9BB8CC; font-style: italic; }
-
-  /* AGENT BRIEF SECTIONS */
-  .brief-section { background: rgba(255,255,255,0.03); border: 1px solid rgba(103,218,255,0.12); border-radius: 6px; padding: 16px 18px; margin-bottom: 10px; }
-  .brief-num { font-family: 'Roboto Mono', monospace; font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #DD60FF; margin-bottom: 4px; }
-  .brief-title { font-size: 14px; font-weight: 600; color: #F0EDE8; margin-bottom: 4px; }
-  .brief-desc { font-size: 12px; color: #9BB8CC; line-height: 1.55; }
+  .field-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px; }
 
   /* CHECKLIST */
-  .checklist { list-style: none; padding: 0; margin-bottom: 16px; }
-  .checklist li { padding: 6px 0 6px 24px; position: relative; font-size: 13px; color: #C8D8E4; border-bottom: 1px solid rgba(103,218,255,0.06); }
-  .checklist li:last-child { border-bottom: none; }
-  .checklist li::before { content: '☐'; position: absolute; left: 0; color: #67DAFF; font-family: 'Roboto Mono', monospace; font-size: 12px; }
+  .check-grid { display:grid; grid-template-columns:1fr 1fr; gap:6px 20px; margin-bottom:6px; }
+  .check-item { display:flex; align-items:flex-start; gap:8px; cursor:pointer; }
+  .check-item input { width:14px; height:14px; margin-top:2px; flex-shrink:0; accent-color:#DD60FF; cursor:pointer; }
+  .check-item span { font-size:12.5px; color:#C8D8E4; line-height:1.4; }
 
-  /* PROMPT CARDS (tips) */
-  .tip-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-bottom: 16px; }
-  .tip-card { background: rgba(103,218,255,0.05); border: 1px solid rgba(103,218,255,0.15); border-radius: 6px; padding: 12px 14px; }
-  .tip-card strong { display: block; font-size: 12px; color: #67DAFF; margin-bottom: 4px; }
-  .tip-card p { font-size: 12px; color: #9BB8CC; margin: 0; line-height: 1.5; }
+  /* WINNER FIELD */
+  .winner-row { display:flex; align-items:center; gap:10px; background:rgba(221,96,255,0.08); border:1px solid rgba(221,96,255,0.25); border-radius:6px; padding:10px 14px; margin-top:8px; }
+  .winner-lbl { font-family:'Roboto Mono',monospace; font-size:9px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#DD60FF; white-space:nowrap; }
+  .winner-input { flex:1; background:transparent; border:none; font-size:14px; color:#DD60FF; font-weight:600; font-family:'Roboto Mono',monospace; outline:none; }
+  .winner-input::placeholder { color:rgba(221,96,255,0.4); }
+
+  /* PROMPT BOX */
+  .prompt-block { background:#010e1c; border:1px solid rgba(103,218,255,0.2); border-radius:6px; margin-bottom:16px; overflow:hidden; }
+  .prompt-header { display:flex; justify-content:space-between; align-items:center; padding:9px 14px; background:rgba(103,218,255,0.06); border-bottom:1px solid rgba(103,218,255,0.15); }
+  .prompt-label-txt { font-family:'Roboto Mono',monospace; font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#67DAFF; }
+  .copy-btn { background:rgba(221,96,255,0.15); border:1px solid rgba(221,96,255,0.4); color:#DD60FF; font-family:'Roboto Mono',monospace; font-size:10px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; padding:4px 12px; border-radius:4px; cursor:pointer; transition:all 0.2s; }
+  .copy-btn:hover { background:#DD60FF; color:#013053; }
+  .copy-btn.copied { background:#025120; border-color:#3ECFA0; color:#3ECFA0; }
+  .prompt-text { padding:14px 16px; font-family:'Roboto Mono',monospace; font-size:11.5px; line-height:1.75; color:#C8D8E4; white-space:pre-wrap; word-break:break-word; max-height:320px; overflow-y:auto; }
+
+  /* STEPS */
+  .step-list { display:flex; flex-direction:column; gap:14px; margin-bottom:20px; }
+  .step-item { display:flex; gap:14px; align-items:flex-start; }
+  .step-dot { flex-shrink:0; width:28px; height:28px; border-radius:50%; background:#DD60FF; color:#013053; font-family:'Roboto Mono',monospace; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:1px; }
+  .step-body strong { display:block; font-size:14px; color:#F0EDE8; margin-bottom:3px; }
+  .step-body p { font-size:13px; color:#9BB8CC; margin:0; }
+
+  /* BUILD CHECKLIST */
+  .build-list { list-style:none; display:flex; flex-direction:column; gap:8px; margin-bottom:20px; }
+  .build-item { display:flex; align-items:flex-start; gap:12px; background:rgba(255,255,255,0.03); border:1px solid rgba(103,218,255,0.1); border-radius:6px; padding:12px 14px; cursor:pointer; transition:background 0.15s; }
+  .build-item:hover { background:rgba(103,218,255,0.05); }
+  .build-item input[type=checkbox] { width:16px; height:16px; margin-top:1px; flex-shrink:0; accent-color:#3ECFA0; cursor:pointer; }
+  .build-num { font-family:'Roboto Mono',monospace; font-size:10px; font-weight:700; color:#DD60FF; white-space:nowrap; margin-top:1px; }
+  .build-text strong { display:block; font-size:13.5px; color:#F0EDE8; margin-bottom:2px; }
+  .build-text p { font-size:12px; color:#9BB8CC; margin:0; line-height:1.5; }
+
+  /* TIPS */
+  .tip-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:10px; margin-bottom:16px; }
+  .tip-card { background:rgba(103,218,255,0.05); border:1px solid rgba(103,218,255,0.15); border-radius:6px; padding:12px 14px; }
+  .tip-card strong { display:block; font-size:12px; color:#67DAFF; margin-bottom:4px; }
+  .tip-card p { font-size:12px; color:#9BB8CC; margin:0; line-height:1.5; }
+
+  /* QUALITY CHECK TABLE */
+  .table-wrap { overflow-x:auto; margin-bottom:16px; }
+  table { width:100%; border-collapse:collapse; font-size:13px; }
+  th { background:rgba(221,96,255,0.12); color:#DD60FF; font-family:'Roboto Mono',monospace; font-size:10px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; padding:9px 12px; text-align:left; border-bottom:1px solid rgba(221,96,255,0.25); }
+  td { padding:9px 12px; border-bottom:1px solid rgba(103,218,255,0.07); color:#C8D8E4; vertical-align:top; }
+  tr:last-child td { border-bottom:none; }
+
+  /* OPPORTUNITY CARDS */
+  .opp-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:14px; margin-bottom:16px; }
+  .opp-card { background:rgba(255,255,255,0.03); border-radius:8px; overflow:hidden; display:flex; flex-direction:column; border:1px solid rgba(221,96,255,0.15); }
+  .opp-head { padding:13px 14px 10px; }
+  .opp-num { font-family:'Roboto Mono',monospace; font-size:9px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; margin-bottom:3px; opacity:0.8; }
+  .opp-sector { font-family:'Roboto Mono',monospace; font-size:9px; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:5px; color:#9BB8CC; }
+  .opp-title { font-size:14px; font-weight:600; color:#F0EDE8; line-height:1.3; margin-bottom:3px; }
+  .opp-role { font-size:11px; color:#9BB8CC; font-family:'Roboto Mono',monospace; }
+  .opp-body { flex:1; }
+  .opp-field { display:flex; border-top:1px solid rgba(103,218,255,0.07); }
+  .opp-lbl { font-family:'Roboto Mono',monospace; font-size:9px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:7px 9px; min-width:88px; max-width:88px; line-height:1.3; background:rgba(0,0,0,0.2); color:#67DAFF; border-right:1px solid rgba(103,218,255,0.07); }
+  .opp-val { font-size:12px; padding:7px 10px; color:#C8D8E4; line-height:1.5; }
+  .opp-foot { padding:9px 14px 11px; border-top:1px solid rgba(221,96,255,0.15); }
+  .opp-foot-lbl { font-family:'Roboto Mono',monospace; font-size:9px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#DD60FF; margin-bottom:2px; }
+  .opp-agent { font-size:13px; font-weight:600; color:#F0EDE8; margin-bottom:2px; }
+  .opp-success { font-size:11px; color:#9BB8CC; font-style:italic; }
 
   /* VIDEO */
-  .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; margin-bottom: 16px; border: 1px solid rgba(103,218,255,0.2); }
-  .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-  .video-placeholder { background: rgba(1,48,83,0.6); border-radius: 8px; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 10px; border: 1px dashed rgba(103,218,255,0.25); margin-bottom: 16px; }
-  .video-placeholder p { color: rgba(255,255,255,0.45); font-size: 13px; font-family: 'Roboto Mono', monospace; }
-  .play-btn { width: 52px; height: 52px; background: #DD60FF; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-
-  /* TABLE */
-  .table-wrap { overflow-x: auto; margin-bottom: 16px; }
-  table { width: 100%; border-collapse: collapse; font-size: 13px; }
-  th { background: rgba(221,96,255,0.12); color: #DD60FF; font-family: 'Roboto Mono', monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 9px 12px; text-align: left; border-bottom: 1px solid rgba(221,96,255,0.25); }
-  td { padding: 9px 12px; border-bottom: 1px solid rgba(103,218,255,0.07); color: #C8D8E4; vertical-align: top; }
-  tr:last-child td { border-bottom: none; }
+  .video-placeholder { background:rgba(1,48,83,0.6); border-radius:8px; aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:10px; border:1px dashed rgba(103,218,255,0.25); margin-bottom:16px; }
+  .video-placeholder p { color:rgba(255,255,255,0.45); font-size:13px; font-family:'Roboto Mono',monospace; }
+  .play-btn { width:52px; height:52px; background:#DD60FF; border-radius:50%; display:flex; align-items:center; justify-content:center; }
 
   /* BACK TO TOP */
-  .btt { position: fixed; bottom: 28px; right: 28px; background: #DD60FF; color: #013053; border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 16px; font-weight: 700; cursor: pointer; display: none; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(221,96,255,0.4); transition: all 0.2s; z-index: 100; }
-  .btt:hover { background: #F0EDE8; transform: translateY(-2px); }
-  .btt.show { display: flex; }
+  .btt { position:fixed; bottom:28px; right:28px; background:#DD60FF; color:#013053; border:none; border-radius:50%; width:40px; height:40px; font-size:18px; font-weight:700; cursor:pointer; display:none; align-items:center; justify-content:center; box-shadow:0 4px 16px rgba(221,96,255,0.4); z-index:100; }
+  .btt.show { display:flex; }
 
-  @media (max-width: 640px) {
-    header { padding: 24px 20px; }
-    .content { padding: 24px 20px 60px; }
-    .accordion-body { padding: 20px 16px; }
-    .opp-grid { grid-template-columns: 1fr; }
+  @media(max-width:640px) {
+    header { padding:24px 20px; }
+    .content { padding:24px 20px 60px; }
+    .accordion-body { padding:20px 16px; }
+    .field-row,.check-grid,.opp-grid,.tip-grid { grid-template-columns:1fr; }
   }
 </style>
 </head>
@@ -138,667 +151,465 @@
 
 <div class="content">
 
-  <div class="intro">
-    <p>Everything you need from tonight's session. Work through the sections in order — each one opens below when you need it.</p>
+  <div style="margin-bottom:32px;">
+    <p style="font-size:15px;color:#C8D8E4;margin-bottom:12px;">Work through these sections in order during the session. Opportunity Cards and Training Videos are at the bottom as a post-session reference.</p>
     <div class="callout callout-warning">
-      <strong>Sandbox environment:</strong> Live connections to your email, Teams, and other channels may not be available today. Do not enter personal or sensitive data. You will not have access after tonight — save your Agent Brief and system instruction to your own device. If you have your own Microsoft 365 subscription (Business or higher), you are welcome to use that account instead and carry your work forward.
+      <strong>Sandbox environment:</strong> Live connections to email, Teams, and other channels may not be available today. Do not enter personal or sensitive data. You will not have access after tonight — save your system instruction to your own device before you leave. If you have your own Microsoft 365 subscription (Business or higher), you are welcome to use that account and carry your work forward.
     </div>
   </div>
 
-  <!-- ── SECTION 1: AGENT BRIEF ── -->
-  <div class="accordion">
-    <button class="accordion-header open" onclick="toggle(this)">
-      <div class="accordion-left">
-        <span class="phase-num">Section 1</span>
-        <div>
-          <div class="accordion-title">Agent Brief</div>
-          <div class="accordion-subtitle">Design your digital colleague before you build</div>
-        </div>
-      </div>
-      <span class="chevron">▾</span>
-    </button>
-    <div class="accordion-body open">
-
-      <div class="callout callout-info">
-        <strong>Complete your Agent Brief first.</strong> The thinking you do here determines the quality of everything that follows. A vague brief produces a vague agent. Work through all seven sections before moving to Section 2.
-      </div>
-
-      <h3>Part 1 — Discover your opportunity</h3>
-
-      <div class="brief-section">
-        <div class="brief-num">A</div>
-        <div class="brief-title">List 2–3 tasks you do most regularly</div>
-        <div class="brief-desc">Tasks that feel repetitive, time-consuming, or inconsistently done. One per line. Be specific — name the task, not just the category.</div>
-      </div>
-
-      <div class="brief-section">
-        <div class="brief-num">B — Criteria checklist</div>
-        <div class="brief-title">Tick which apply to your chosen task</div>
-        <div class="brief-desc" style="margin-bottom:10px;">Use this to confirm your task is ready for an agent.</div>
-        <ul class="checklist">
-          <li>I do this more than once a month</li>
-          <li>The steps are roughly the same each time</li>
-          <li>It uses information that can be written down or uploaded</li>
-          <li>Quality varies depending on how much time I have</li>
-          <li>I spend more time compiling or formatting than thinking</li>
-          <li>A well-briefed colleague could attempt this task</li>
-        </ul>
-      </div>
-
-      <div class="brief-section">
-        <div class="brief-num">C</div>
-        <div class="brief-title">How much time does this task currently take?</div>
-        <div class="brief-desc">Per occurrence or per week. Estimate honestly — this is what you are reclaiming.</div>
-      </div>
-
-      <div class="brief-section">
-        <div class="brief-num">D — Your chosen task</div>
-        <div class="brief-title">The task I am designing my digital colleague for:</div>
-        <div class="brief-desc">Write it in one specific sentence at the top of your Agent Brief worksheet.</div>
-      </div>
-
-      <div class="divider"></div>
-      <h3>Part 2 — Design your digital colleague</h3>
-      <p style="font-size:13px;color:#9BB8CC;margin-bottom:16px;">Work through sections 1–7 in order. Vague inputs produce vague outputs — push for specificity in every section.</p>
-
-      <div class="step-list">
-        <div class="step-item">
-          <div class="step-dot">1</div>
-          <div class="step-body">
-            <strong>Agent name &amp; who uses it</strong>
-            <p>Name it specifically — not "My Agent." Example: "Never Miss a Deadline." Include your role and how often you would use it.</p>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-dot">2</div>
-          <div class="step-body">
-            <strong>Current process &amp; pain points</strong>
-            <p>Walk through your current steps from start to finish. Where is it slow, inconsistent, or frustrating? What happens when you are rushed?</p>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-dot">3</div>
-          <div class="step-body">
-            <strong>Decision points</strong>
-            <p>What judgments do you make manually when doing this task? Example: Which emails are urgent? Which can wait? Which need escalation? These are what your agent will help structure.</p>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-dot">4</div>
-          <div class="step-body">
-            <strong>Knowledge sources</strong>
-            <p>List every source the agent needs — Outlook, Teams, SharePoint, uploaded templates, policy documents, past examples. If it is not listed here, the agent will not know to use it.</p>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-dot">5</div>
-          <div class="step-body">
-            <strong>What the agent should produce</strong>
-            <p>Describe the output specifically — sections, structure, length, tone. Example: a three-section daily briefing with Priority Action, This Week, and FYI/File.</p>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-dot">6</div>
-          <div class="step-body">
-            <strong>Non-negotiables — what the human still decides</strong>
-            <p>What professional judgment must stay with you? What must this agent never do? What always requires your review before it is used or sent?</p>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-dot">7</div>
-          <div class="step-body">
-            <strong>Success looks like...</strong>
-            <p>One or two sentences. How will you know this agent is working? Time saved? Consistent quality? Fewer missed commitments?</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ── SECTION 2: OPPORTUNITY CARDS ── -->
-  <div class="accordion">
-    <button class="accordion-header" onclick="toggle(this)">
-      <div class="accordion-left">
-        <span class="phase-num">Section 2</span>
-        <div>
-          <div class="accordion-title">Opportunity Cards</div>
-          <div class="accordion-subtitle">11 sector examples to browse and spark ideas</div>
-        </div>
-      </div>
-      <span class="chevron">▾</span>
-    </button>
-    <div class="accordion-body">
-
-      <div class="callout callout-info">
-        <strong>How to use these cards.</strong> Find the one closest to your work — or use them to sanity-check a task you already have in mind. If your task is not here, write it in your own words at the top of your Agent Brief. One task only. Depth over breadth.
-      </div>
-
-      <div class="opp-grid">
-
-        <div class="opp-card">
-          <div class="opp-head" style="background:rgba(76,0,55,0.4);border-bottom:2px solid #4C0037;">
-            <div class="opp-num" style="color:#DD60FF;">01</div>
-            <div class="opp-sector">Healthcare &amp; clinical services</div>
-            <div class="opp-title">Nothing Gets Missed at Handover</div>
-            <div class="opp-role">Clinical staff · Allied health · Nursing</div>
-          </div>
-          <div class="opp-body">
-            <div class="opp-field"><div class="opp-lbl">Process</div><div class="opp-val">Review patient notes before shift end. Compile actions, medication changes, and alerts for incoming staff.</div></div>
-            <div class="opp-field"><div class="opp-lbl">Pain</div><div class="opp-val">Quality varies with how rushed the shift has been. Critical information is sometimes missed.</div></div>
-            <div class="opp-field"><div class="opp-lbl">Sources</div><div class="opp-val">Shift observations, medication updates, flagged concerns, ward context</div></div>
-            <div class="opp-field"><div class="opp-lbl">Produces</div><div class="opp-val">Clear handover summary flagging priority patients, pending actions, and clinical alerts</div></div>
-            <div class="opp-field"><div class="opp-lbl">Human</div><div class="opp-val">Clinical judgment, escalation decisions, final accuracy check</div></div>
-          </div>
-          <div class="opp-foot">
-            <div class="opp-foot-lbl">Example agent name</div>
-            <div class="opp-agent">Nothing Gets Missed at Handover</div>
-            <div class="opp-success">Complete handover summary ready in under 5 minutes</div>
-          </div>
-        </div>
-
-        <div class="opp-card">
-          <div class="opp-head" style="background:rgba(1,48,83,0.6);border-bottom:2px solid #013053;">
-            <div class="opp-num" style="color:#67DAFF;">02</div>
-            <div class="opp-sector">Disability support &amp; NDIS</div>
-            <div class="opp-title">Every Session Gets Recorded</div>
-            <div class="opp-role">Support workers · Coordinators · Team leaders</div>
-          </div>
-          <div class="opp-body">
-            <div class="opp-field"><div class="opp-lbl">Process</div><div class="opp-val">Complete a support session. Write a progress note aligned to NDIS outcomes. Submit within required timeframe.</div></div>
-            <div class="opp-field"><div class="opp-lbl">Pain</div><div class="opp-val">NDIS-aligned notes after every session are time-consuming. Quality and compliance vary across a large workforce.</div></div>
-            <div class="opp-field"><div class="opp-lbl">Sources</div><div class="opp-val">Participant goals, session observations, NDIS outcome domain, support plan</div></div>
-            <div class="opp-field"><div class="opp-lbl">Produces</div><div class="opp-val">NDIS-aligned progress note linking observations to participant goals and outcomes</div></div>
-            <div class="opp-field"><div class="opp-lbl">Human</div><div class="opp-val">Accuracy of observations, safeguarding judgments, final review before submission</div></div>
-          </div>
-          <div class="opp-foot">
-            <div class="opp-foot-lbl">Example agent name</div>
-            <div class="opp-agent">Every Session Gets Recorded</div>
-            <div class="opp-success">Compliant progress note drafted in 5 minutes after each session</div>
-          </div>
-        </div>
-
-        <div class="opp-card">
-          <div class="opp-head" style="background:rgba(0,90,140,0.5);border-bottom:2px solid #005A8C;">
-            <div class="opp-num" style="color:#67DAFF;">03</div>
-            <div class="opp-sector">Engineering &amp; project management</div>
-            <div class="opp-title">Never Miss a Milestone</div>
-            <div class="opp-role">Project managers · Engineers · Consultants</div>
-          </div>
-          <div class="opp-body">
-            <div class="opp-field"><div class="opp-lbl">Process</div><div class="opp-val">Compile updates from team members. Review meeting notes, task trackers, and site reports. Write the status update weekly.</div></div>
-            <div class="opp-field"><div class="opp-lbl">Pain</div><div class="opp-val">Each update takes 60–90 minutes per project. Tone and format vary by author. Items missed under pressure.</div></div>
-            <div class="opp-field"><div class="opp-lbl">Sources</div><div class="opp-val">Meeting notes, milestone tracker, risk register, previous update, stakeholder names</div></div>
-            <div class="opp-field"><div class="opp-lbl">Produces</div><div class="opp-val">Structured status update synthesising inputs, flagging risks and blockers, in a consistent format</div></div>
-            <div class="opp-field"><div class="opp-lbl">Human</div><div class="opp-val">Risk escalation, client relationship tone, technical accuracy, final sign-off</div></div>
-          </div>
-          <div class="opp-foot">
-            <div class="opp-foot-lbl">Example agent name</div>
-            <div class="opp-agent">Never Miss a Milestone</div>
-            <div class="opp-success">Weekly status update drafted in 10 minutes instead of 60–90</div>
-          </div>
-        </div>
-
-        <div class="opp-card">
-          <div class="opp-head" style="background:rgba(2,81,32,0.5);border-bottom:2px solid #025120;">
-            <div class="opp-num" style="color:#CCFF00;">04</div>
-            <div class="opp-sector">Aged care &amp; residential services</div>
-            <div class="opp-title">Every Family Stays Informed</div>
-            <div class="opp-role">Care staff · Coordinators · Administration</div>
-          </div>
-          <div class="opp-body">
-            <div class="opp-field"><div class="opp-lbl">Process</div><div class="opp-val">Review resident observations and care notes. Write a family update. Ensure language is warm and person-centred.</div></div>
-            <div class="opp-field"><div class="opp-lbl">Pain</div><div class="opp-val">Communication quality varies across staff. Writing warm, consistent updates takes time care staff rarely have.</div></div>
-            <div class="opp-field"><div class="opp-lbl">Sources</div><div class="opp-val">Resident care observations, highlights or milestones, family communication tone guide</div></div>
-            <div class="opp-field"><div class="opp-lbl">Produces</div><div class="opp-val">Warm, person-centred family update in plain English — ready to personalise and send</div></div>
-            <div class="opp-field"><div class="opp-lbl">Human</div><div class="opp-val">What to include based on clinical knowledge, sensitive information, final review</div></div>
-          </div>
-          <div class="opp-foot">
-            <div class="opp-foot-lbl">Example agent name</div>
-            <div class="opp-agent">Every Family Stays Informed</div>
-            <div class="opp-success">Warm, consistent family update drafted in 5 minutes per resident</div>
-          </div>
-        </div>
-
-        <div class="opp-card">
-          <div class="opp-head" style="background:rgba(0,107,92,0.5);border-bottom:2px solid #006B5C;">
-            <div class="opp-num" style="color:#CCFF00;">05</div>
-            <div class="opp-sector">Research &amp; knowledge work</div>
-            <div class="opp-title">Never Lose a Finding</div>
-            <div class="opp-role">Researchers · Analysts · Policy officers</div>
-          </div>
-          <div class="opp-body">
-            <div class="opp-field"><div class="opp-lbl">Process</div><div class="opp-val">Search and read multiple research papers. Extract relevant findings. Write a plain English summary for stakeholders.</div></div>
-            <div class="opp-field"><div class="opp-lbl">Pain</div><div class="opp-val">Synthesis takes hours per topic. Stakeholder summaries are deprioritised under reporting deadlines.</div></div>
-            <div class="opp-field"><div class="opp-lbl">Sources</div><div class="opp-val">Research papers or abstracts, project context, target audience, required format</div></div>
-            <div class="opp-field"><div class="opp-lbl">Produces</div><div class="opp-val">Plain English stakeholder summary synthesising key findings and flagging relevance to current priorities</div></div>
-            <div class="opp-field"><div class="opp-lbl">Human</div><div class="opp-val">Interpretation, research direction, what to include or exclude, final accuracy check</div></div>
-          </div>
-          <div class="opp-foot">
-            <div class="opp-foot-lbl">Example agent name</div>
-            <div class="opp-agent">Never Lose a Finding</div>
-            <div class="opp-success">Stakeholder summary drafted in 20 minutes instead of several hours</div>
-          </div>
-        </div>
-
-        <div class="opp-card">
-          <div class="opp-head" style="background:rgba(26,82,118,0.5);border-bottom:2px solid #1A5276;">
-            <div class="opp-num" style="color:#67DAFF;">06</div>
-            <div class="opp-sector">IT services &amp; technology support</div>
-            <div class="opp-title">Every Incident Gets Documented</div>
-            <div class="opp-role">IT support staff · Field engineers · Service managers</div>
-          </div>
-          <div class="opp-body">
-            <div class="opp-field"><div class="opp-lbl">Process</div><div class="opp-val">Respond to and resolve the incident. Write the report in the ticketing system. Document root cause and resolution.</div></div>
-            <div class="opp-field"><div class="opp-lbl">Pain</div><div class="opp-val">Report quality varies by engineer. Writing after a stressful incident is time-consuming. Inconsistent formats make compliance reviews difficult.</div></div>
-            <div class="opp-field"><div class="opp-lbl">Sources</div><div class="opp-val">Incident description, affected systems, timeline, steps taken, resolution outcome</div></div>
-            <div class="opp-field"><div class="opp-lbl">Produces</div><div class="opp-val">Structured incident report — root cause, resolution, impact, preventive recommendations</div></div>
-            <div class="opp-field"><div class="opp-lbl">Human</div><div class="opp-val">Technical accuracy, escalation decisions, client communication approach</div></div>
-          </div>
-          <div class="opp-foot">
-            <div class="opp-foot-lbl">Example agent name</div>
-            <div class="opp-agent">Every Incident Gets Documented</div>
-            <div class="opp-success">Structured incident report completed in 5 minutes instead of 20–30</div>
-          </div>
-        </div>
-
-        <div class="opp-card">
-          <div class="opp-head" style="background:rgba(204,79,28,0.4);border-bottom:2px solid #CC4F1C;">
-            <div class="opp-num" style="color:#FFCD0E;">07</div>
-            <div class="opp-sector">Professional services &amp; consulting</div>
-            <div class="opp-title">Every Opportunity Gets a Proposal</div>
-            <div class="opp-role">Consultants · Account managers · Business development</div>
-          </div>
-          <div class="opp-body">
-            <div class="opp-field"><div class="opp-lbl">Process</div><div class="opp-val">Understand a client's problem. Scope a solution. Write a structured proposal tailored to the client's sector and style.</div></div>
-            <div class="opp-field"><div class="opp-lbl">Pain</div><div class="opp-val">Each proposal needs to be personalised. Writing from scratch is time-intensive. Maintaining a consistent voice is hard.</div></div>
-            <div class="opp-field"><div class="opp-lbl">Sources</div><div class="opp-val">Client context, problem statement, proposed solution, service catalogue, tone guide</div></div>
-            <div class="opp-field"><div class="opp-lbl">Produces</div><div class="opp-val">Structured proposal — problem, solution, value, investment, next steps — in a consistent professional voice</div></div>
-            <div class="opp-field"><div class="opp-lbl">Human</div><div class="opp-val">Final recommendations, pricing, client relationship nuances, review before sending</div></div>
-          </div>
-          <div class="opp-foot">
-            <div class="opp-foot-lbl">Example agent name</div>
-            <div class="opp-agent">Every Opportunity Gets a Proposal</div>
-            <div class="opp-success">First draft proposal ready in 15 minutes with a consistent voice</div>
-          </div>
-        </div>
-
-        <div class="opp-card">
-          <div class="opp-head" style="background:rgba(125,60,152,0.5);border-bottom:2px solid #7D3C98;">
-            <div class="opp-num" style="color:#DD60FF;">08</div>
-            <div class="opp-sector">Customer service &amp; client-facing roles</div>
-            <div class="opp-title">No Customer Left Waiting</div>
-            <div class="opp-role">Customer service staff · Administrators · Sales support</div>
-          </div>
-          <div class="opp-body">
-            <div class="opp-field"><div class="opp-lbl">Process</div><div class="opp-val">Receive a customer inquiry — booking, quote, complaint, or follow-up. Look up relevant history. Write a professional response.</div></div>
-            <div class="opp-field"><div class="opp-lbl">Pain</div><div class="opp-val">Response quality varies across staff and shifts. Follow-ups regularly slip through without a reliable system.</div></div>
-            <div class="opp-field"><div class="opp-lbl">Sources</div><div class="opp-val">Customer inquiry, relevant account history, organisational tone guide</div></div>
-            <div class="opp-field"><div class="opp-lbl">Produces</div><div class="opp-val">Professional, on-brand response or follow-up ready to send after a quick review</div></div>
-            <div class="opp-field"><div class="opp-lbl">Human</div><div class="opp-val">Pricing exceptions, complaint escalation, personal judgment calls, final review</div></div>
-          </div>
-          <div class="opp-foot">
-            <div class="opp-foot-lbl">Example agent name</div>
-            <div class="opp-agent">No Customer Left Waiting</div>
-            <div class="opp-success">Professional customer response drafted in under 3 minutes</div>
-          </div>
-        </div>
-
-        <div class="opp-card">
-          <div class="opp-head" style="background:rgba(58,26,8,0.7);border-bottom:2px solid #3A1A08;">
-            <div class="opp-num" style="color:#FFCD0E;">09</div>
-            <div class="opp-sector">Education &amp; training</div>
-            <div class="opp-title">Every Learner Gets Feedback</div>
-            <div class="opp-role">Teachers · Trainers · Learning designers</div>
-          </div>
-          <div class="opp-body">
-            <div class="opp-field"><div class="opp-lbl">Process</div><div class="opp-val">Review student or participant work. Write individual feedback aligned to learning outcomes across large cohorts.</div></div>
-            <div class="opp-field"><div class="opp-lbl">Pain</div><div class="opp-val">Writing meaningful personalised feedback for large groups is extremely time-consuming. Quality drops under volume.</div></div>
-            <div class="opp-field"><div class="opp-lbl">Sources</div><div class="opp-val">Assessment criteria, learning outcomes, student work, feedback examples</div></div>
-            <div class="opp-field"><div class="opp-lbl">Produces</div><div class="opp-val">Constructive, criteria-aligned feedback in an encouraging tone — ready to personalise before returning</div></div>
-            <div class="opp-field"><div class="opp-lbl">Human</div><div class="opp-val">Final grade judgment, tone personalisation, anything requiring professional discretion</div></div>
-          </div>
-          <div class="opp-foot">
-            <div class="opp-foot-lbl">Example agent name</div>
-            <div class="opp-agent">Every Learner Gets Feedback</div>
-            <div class="opp-success">Criteria-aligned feedback drafted in minutes per learner</div>
-          </div>
-        </div>
-
-        <div class="opp-card">
-          <div class="opp-head" style="background:rgba(26,107,90,0.5);border-bottom:2px solid #1A6B5A;">
-            <div class="opp-num" style="color:#CCFF00;">10</div>
-            <div class="opp-sector">Finance, legal &amp; compliance</div>
-            <div class="opp-title">Nothing Slips Through the Audit</div>
-            <div class="opp-role">Finance officers · Compliance staff · Legal support</div>
-          </div>
-          <div class="opp-body">
-            <div class="opp-field"><div class="opp-lbl">Process</div><div class="opp-val">Review transactions, contracts, or compliance records. Identify anomalies or items requiring action. Compile a summary for sign-off.</div></div>
-            <div class="opp-field"><div class="opp-lbl">Pain</div><div class="opp-val">Manual review is time-consuming and prone to inconsistency. Patterns across large volumes are hard to spot.</div></div>
-            <div class="opp-field"><div class="opp-lbl">Sources</div><div class="opp-val">Records under review, compliance framework, reporting template</div></div>
-            <div class="opp-field"><div class="opp-lbl">Produces</div><div class="opp-val">Consistent review summary flagging items requiring attention, missing information, and recommended actions</div></div>
-            <div class="opp-field"><div class="opp-lbl">Human</div><div class="opp-val">Final compliance judgment, escalation decisions, sign-off, legal interpretation</div></div>
-          </div>
-          <div class="opp-foot">
-            <div class="opp-foot-lbl">Example agent name</div>
-            <div class="opp-agent">Nothing Slips Through the Audit</div>
-            <div class="opp-success">Consistent review summary prepared in a fraction of the time</div>
-          </div>
-        </div>
-
-        <div class="opp-card">
-          <div class="opp-head" style="background:rgba(110,44,0,0.5);border-bottom:2px solid #6E2C00;">
-            <div class="opp-num" style="color:#FFCD0E;">11</div>
-            <div class="opp-sector">Sales &amp; business development</div>
-            <div class="opp-title">Every Opportunity Gets Its Story</div>
-            <div class="opp-role">Sales agents · Account managers · Business development</div>
-          </div>
-          <div class="opp-body">
-            <div class="opp-field"><div class="opp-lbl">Process</div><div class="opp-val">Gather details from a client conversation or briefing. Write a proposal or campaign communication. Draft follow-up messages at each pipeline stage.</div></div>
-            <div class="opp-field"><div class="opp-lbl">Pain</div><div class="opp-val">Writing tailored, high-quality copy for every opportunity is time-consuming. Quality varies under volume pressure.</div></div>
-            <div class="opp-field"><div class="opp-lbl">Sources</div><div class="opp-val">Opportunity details, client context, target audience, brand tone guide</div></div>
-            <div class="opp-field"><div class="opp-lbl">Produces</div><div class="opp-val">Compelling proposal or client communications in a consistent professional brand voice</div></div>
-            <div class="opp-field"><div class="opp-lbl">Human</div><div class="opp-val">Pricing strategy, negotiation decisions, final copy review, client relationship management</div></div>
-          </div>
-          <div class="opp-foot">
-            <div class="opp-foot-lbl">Example agent name</div>
-            <div class="opp-agent">Every Opportunity Gets Its Story</div>
-            <div class="opp-success">Professional proposal copy drafted in 10 minutes per opportunity</div>
-          </div>
-        </div>
-
+<!-- ══════════════════════════════════════════════════════
+     SECTION 1 — AGENT BRIEF (digital transfer form)
+══════════════════════════════════════════════════════ -->
+<div class="accordion">
+  <button class="accordion-header open" onclick="toggle(this)">
+    <div class="accordion-left">
+      <span class="phase-num">Step 1</span>
+      <div>
+        <div class="accordion-title">Agent Brief</div>
+        <div class="accordion-subtitle">Transfer your worksheet answers here, then copy the brief to generate your system instruction</div>
       </div>
     </div>
-  </div>
+    <span class="chevron">▾</span>
+  </button>
+  <div class="accordion-body open">
 
-  <!-- ── SECTION 3: SYSTEM INSTRUCTION ── -->
-  <div class="accordion">
-    <button class="accordion-header" onclick="toggle(this)">
-      <div class="accordion-left">
-        <span class="phase-num">Section 3</span>
-        <div>
-          <div class="accordion-title">Generate Your System Instruction</div>
-          <div class="accordion-subtitle">Paste this prompt into M365 Copilot with your completed Agent Brief</div>
-        </div>
-      </div>
-      <span class="chevron">▾</span>
-    </button>
-    <div class="accordion-body">
-
-      <div class="step-list">
-        <div class="step-item">
-          <div class="step-dot">1</div>
-          <div class="step-body">
-            <strong>Copy this prompt</strong>
-            <p>Paste your completed Agent Brief — all seven sections — into the space at the end. Send the whole thing to M365 Copilot in Work mode as one message.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="prompt-block">
-        <div class="prompt-header">
-          <span class="prompt-label">Conversion Prompt — paste into M365 Copilot (Work mode)</span>
-          <button class="copy-btn" onclick="copyText(this,'conv')">Copy</button>
-        </div>
-        <div class="prompt-text" id="conv">I have completed an Agent Brief for a Microsoft 365 declarative agent. Use it to write a complete system instruction ready to paste into M365 Copilot Agent Builder.
-
-The system instruction should:
-- Define the agent's role and purpose precisely
-- Specify the knowledge sources it draws from
-- Describe the audience and communication style
-- Set out the output format and structure in detail
-- List what the human still decides and what the agent must never do
-- Include a quality standard the agent applies to every output
-
-Make it specific enough that this agent could not be mistaken for one built for a different professional in a different organisation.
-
-Here is my completed Agent Brief:
-
-[paste your completed Agent Brief — all seven sections — here]</div>
-      </div>
-
-      <div class="callout callout-warning">
-        <strong>If the generated instruction is only a few sentences</strong> — your Agent Brief was too vague. Return to sections 2 and 3 of your brief, add more specific detail, and send the prompt again.
-      </div>
-
-      <div class="step-list">
-        <div class="step-item">
-          <div class="step-dot">2</div>
-          <div class="step-body">
-            <strong>Quality check it</strong>
-            <p>Paste the generated instruction back into the same Copilot chat and send: <em>"What is unclear or ambiguous? What would you have to guess rather than know? List the gaps."</em> Fix what comes up.</p>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-dot">3</div>
-          <div class="step-body">
-            <strong>Save it to your own device</strong>
-            <p>Copy the full instruction into a Word document or notes app. Name it: <em>[Your Task] — System Instruction — July 2026.</em> Save now — the sandbox closes when the session ends.</p>
-          </div>
-        </div>
-      </div>
-
+    <div class="callout callout-info">
+      <strong>How to use this form.</strong> You have already completed the paper worksheet at your table. Transfer your answers into the fields below — then click <strong>Copy Brief</strong> at the bottom. This compiles your brief inside the conversion prompt, ready to paste into M365 Copilot in one go.
     </div>
-  </div>
 
-  <!-- ── SECTION 4: TRAINING VIDEOS ── -->
-  <div class="accordion">
-    <button class="accordion-header" onclick="toggle(this)">
-      <div class="accordion-left">
-        <span class="phase-num">Section 4</span>
-        <div>
-          <div class="accordion-title">Training Videos</div>
-          <div class="accordion-subtitle">Watch the agent in action, then watch the full build</div>
-        </div>
-      </div>
-      <span class="chevron">▾</span>
-    </button>
-    <div class="accordion-body">
+    <h3>Part 1 — Your opportunity</h3>
 
-      <h3>Video 1 · ~5 minutes · The agent in action</h3>
-      <p style="font-size:13px;color:#9BB8CC;margin-bottom:12px;">Watch Never Miss a Deadline in action — how it is opened, how a brief is sent, what the output looks like, and what the human still decides.</p>
-      <div class="video-placeholder">
-        <div class="play-btn">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><polygon points="8,5 20,12 8,19" fill="white"/></svg>
-        </div>
-        <p>Video 1 — link to be added once recorded</p>
-      </div>
-
-      <div class="divider"></div>
-
-      <h3>Video 2 · ~12 minutes · Full build walkthrough</h3>
-      <p style="font-size:13px;color:#9BB8CC;margin-bottom:12px;">The complete process — from a completed Agent Brief through to a working agent in M365 Copilot Agent Builder. Follow along using your own brief.</p>
-      <div class="video-placeholder">
-        <div class="play-btn">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><polygon points="8,5 20,12 8,19" fill="white"/></svg>
-        </div>
-        <p>Video 2 — link to be added once recorded</p>
-      </div>
-
-      <div class="callout callout-info">
-        <strong>Recording note:</strong> these videos are recorded outside the sandbox. In today's session, live connections to Outlook and SharePoint may not be available. Test your agent by pasting context directly into the chat — the reasoning and output quality are the same.
-      </div>
-
+    <div class="field-block">
+      <div class="field-label">A · Tasks you do most regularly</div>
+      <div class="field-hint">Transfer from your worksheet — one task per line</div>
+      <textarea id="f-tasks" placeholder="1. &#10;2. &#10;3. "></textarea>
     </div>
-  </div>
 
-  <!-- ── SECTION 5: BUILD GUIDE ── -->
-  <div class="accordion">
-    <button class="accordion-header" onclick="toggle(this)">
-      <div class="accordion-left">
-        <span class="phase-num">Section 5</span>
-        <div>
-          <div class="accordion-title">Build Guide</div>
-          <div class="accordion-subtitle">Step-by-step — have your system instruction ready before you start</div>
-        </div>
+    <div class="field-block">
+      <div class="field-label">B · Criteria that apply to your chosen task</div>
+      <div class="field-hint">Tick the ones that apply</div>
+      <div class="check-grid">
+        <label class="check-item"><input type="checkbox" id="c1"><span>I do this more than once a month</span></label>
+        <label class="check-item"><input type="checkbox" id="c2"><span>The steps are roughly the same each time</span></label>
+        <label class="check-item"><input type="checkbox" id="c3"><span>It uses information that can be written down or uploaded</span></label>
+        <label class="check-item"><input type="checkbox" id="c4"><span>Quality varies depending on how much time I have</span></label>
+        <label class="check-item"><input type="checkbox" id="c5"><span>I spend more time compiling or formatting than thinking</span></label>
+        <label class="check-item"><input type="checkbox" id="c6"><span>A well-briefed colleague could attempt this task</span></label>
       </div>
-      <span class="chevron">▾</span>
-    </button>
-    <div class="accordion-body">
-
-      <div class="step-list">
-        <div class="step-item">
-          <div class="step-dot">1</div>
-          <div class="step-body">
-            <strong>Open M365 Copilot in Work mode</strong>
-            <p>Go to microsoft365.com and sign in. Open Copilot. Select <strong>Work</strong> from the toggle at the top. If you see Personal, switch to Work — you cannot access Agent Builder in Personal mode.</p>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-dot">2</div>
-          <div class="step-body">
-            <strong>Navigate to Agent Builder</strong>
-            <p>In the left navigation panel, find the <strong>Agents</strong> section. Click <strong>New agent</strong> below any existing agents.</p>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-dot">3</div>
-          <div class="step-body">
-            <strong>Click Skip to configure</strong>
-            <p>On the Agent Builder screen, look for the small link <strong>Skip to configure →</strong> below the text input. Click it — do not type in the box.</p>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-dot">4</div>
-          <div class="step-body">
-            <strong>Name and describe your agent</strong>
-            <p><strong>Name:</strong> specific to your task — not "My Agent." <strong>Description:</strong> one sentence — what it does and who it serves.</p>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-dot">5</div>
-          <div class="step-body">
-            <strong>Paste your system instruction</strong>
-            <p>Find the <strong>Instructions</strong> field — the large text area. Paste your complete system instruction. All of it. A short instruction will not configure a useful agent.</p>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-dot">6</div>
-          <div class="step-body">
-            <strong>Add knowledge sources</strong>
-            <p><strong>Upload here:</strong> permanent documents — templates, policy docs, brand guidelines, past examples.<br>
-            <strong>Do not upload here:</strong> per-request files like today's meeting notes — attach those in chat when making each request.</p>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-dot">7</div>
-          <div class="step-body">
-            <strong>Add 3 starter prompts</strong>
-            <p>Each needs a <strong>Title</strong> (short label shown as a button) and a <strong>Message</strong> (the full prompt sent when clicked). Make them specific to your three most common requests.</p>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-dot">8</div>
-          <div class="step-body">
-            <strong>Switch to Preview and test</strong>
-            <p>Click the <strong>Preview</strong> tab. Send a realistic test brief — paste context directly into the chat if live data connections are not available. Does the output reflect your context without you explaining it?</p>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-dot">9</div>
-          <div class="step-body">
-            <strong>Click Create</strong>
-            <p>When satisfied, click <strong>Create</strong> in the top right. If the output is not right — go back to Configure, update the Instructions field, and test again.</p>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-dot">10</div>
-          <div class="step-body">
-            <strong>Save your system instruction before you leave</strong>
-            <p>Make sure your instruction is saved to your own device. The sandbox closes when the session ends. Your document does not.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="callout callout-success">
-        <strong>You have built your agent.</strong> The Agent Brief and system instruction you produced today belong to you. Use them to configure your agent in your own M365 environment whenever you are ready.
-      </div>
-
     </div>
-  </div>
 
-  <!-- ── SECTION 6: TIPS & PROMPTS ── -->
-  <div class="accordion">
-    <button class="accordion-header" onclick="toggle(this)">
-      <div class="accordion-left">
-        <span class="phase-num">Section 6</span>
-        <div>
-          <div class="accordion-title">Tips &amp; Prompts</div>
-          <div class="accordion-subtitle">Get better results every time</div>
-        </div>
-      </div>
-      <span class="chevron">▾</span>
-    </button>
-    <div class="accordion-body">
-
-      <h3>Four things that improve every agent interaction</h3>
-      <div class="tip-grid">
-        <div class="tip-card">
-          <strong>Lead with the outcome</strong>
-          <p>Not: "Create a progress note." Instead: "Create an NDIS progress note for [participant] working on Goal 2. Observations: [notes]. Three paragraphs, plain English, no jargon."</p>
-        </div>
-        <div class="tip-card">
-          <strong>Name the audience every time</strong>
-          <p>Even with audience context in your system instruction, naming the specific audience in each request sharpens the output. "Audience: family members — warm, plain English, no clinical terminology."</p>
-        </div>
-        <div class="tip-card">
-          <strong>Give the most important thing first</strong>
-          <p>State the key finding upfront. "The key finding is a 22% increase in response time. Build the status update narrative around what this means for the timeline."</p>
-        </div>
-        <div class="tip-card">
-          <strong>Use the quality check as a prompt</strong>
-          <p>"Review this output. Does it reflect my professional context or feel generic? Is there anything a professional in my field would find inaccurate? List what to fix, then rewrite."</p>
-        </div>
-      </div>
-
-      <div class="divider"></div>
-      <h3>Quality check — five questions before using any output professionally</h3>
-
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Question</th><th>What to check</th></tr></thead>
-          <tbody>
-            <tr><td>Does it serve the stated aim?</td><td>If you removed a section, would the audience miss anything essential? If not, cut it.</td></tr>
-            <tr><td>Does the structure make sense?</td><td>Does it build logically toward the conclusion? Would a sceptical reader find it convincing?</td></tr>
-            <tr><td>Is the language right for this audience?</td><td>Read one section aloud as if you are the least familiar person in the room. Is it still clear?</td></tr>
-            <tr><td>Are there any risks?</td><td>Unverified claims, legally sensitive content, anything that could mislead. The agent does not know your legal obligations — you do.</td></tr>
-            <tr><td>Does it meet your professional standard?</td><td>Consistent format, appropriate length, correct terminology. The agent applies the standards you described — verify they were followed.</td></tr>
-          </tbody>
-        </table>
-      </div>
-
+    <div class="field-block">
+      <div class="field-label">C · Time currently spent on this task</div>
+      <textarea id="f-time" class="short" placeholder="e.g. 30–45 minutes every morning, approx 3 hours per week"></textarea>
     </div>
-  </div>
 
+    <div class="field-block">
+      <div class="field-label">D · The task I am designing my digital colleague for</div>
+      <div class="winner-row">
+        <span class="winner-lbl">My task</span>
+        <input type="text" class="winner-input" id="f-winner" placeholder="Write your task in one sentence...">
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <h3>Part 2 — Design your digital colleague</h3>
+
+    <div class="field-row">
+      <div class="field-block" style="margin-bottom:0;">
+        <div class="field-label">1 · Agent name</div>
+        <div class="field-hint">Specific to your task — not "My Agent"</div>
+        <textarea id="f-name" class="short" placeholder="e.g. Never Miss a Deadline"></textarea>
+      </div>
+      <div class="field-block" style="margin-bottom:0;">
+        <div class="field-label">Who uses it and how often?</div>
+        <div class="field-hint">Your role and frequency of use</div>
+        <textarea id="f-user" class="short" placeholder="e.g. Used by me daily, first thing every morning"></textarea>
+      </div>
+    </div>
+
+    <div class="field-block">
+      <div class="field-label">2 · Current process and pain points</div>
+      <div class="field-hint">Your steps from start to finish — where it breaks down and what happens when you are rushed</div>
+      <textarea id="f-process" class="tall" placeholder="Walk through your current steps..."></textarea>
+    </div>
+
+    <div class="field-block">
+      <div class="field-label">3 · Decision points</div>
+      <div class="field-hint">What judgments do you currently make manually? e.g. Which emails are urgent? Which can wait? Which need escalation?</div>
+      <textarea id="f-decisions" placeholder="List the decisions involved in this task..."></textarea>
+    </div>
+
+    <div class="field-row">
+      <div class="field-block" style="margin-bottom:0;">
+        <div class="field-label">4 · Knowledge sources</div>
+        <div class="field-hint">Outlook, Teams, SharePoint, uploaded docs — list everything the agent needs</div>
+        <textarea id="f-sources" placeholder="e.g. Outlook inbox, Teams messages, key contacts document..."></textarea>
+      </div>
+      <div class="field-block" style="margin-bottom:0;">
+        <div class="field-label">5 · What the agent should produce</div>
+        <div class="field-hint">Format, structure, sections, length, tone — be specific</div>
+        <textarea id="f-output" placeholder="e.g. A structured daily briefing with three sections: Priority Action, This Week, FYI/File..."></textarea>
+      </div>
+    </div>
+
+    <div class="field-row">
+      <div class="field-block" style="margin-bottom:0;">
+        <div class="field-label">6 · Non-negotiables — what the human still decides</div>
+        <div class="field-hint">What must stay with you? What must the agent never do?</div>
+        <textarea id="f-human" placeholder="e.g. I review everything before it is sent. The agent must never send directly..."></textarea>
+      </div>
+      <div class="field-block" style="margin-bottom:0;">
+        <div class="field-label">7 · Success looks like...</div>
+        <div class="field-hint">One or two sentences — how will you know this is working?</div>
+        <textarea id="f-success" placeholder="e.g. My morning review takes under 10 minutes instead of 45..."></textarea>
+      </div>
+    </div>
+
+    <div style="height:20px;"></div>
+
+    <div class="prompt-block">
+      <div class="prompt-header">
+        <span class="prompt-label-txt">Your conversion prompt — ready to paste into M365 Copilot (Work mode)</span>
+        <button class="copy-btn" id="copyBtn" onclick="copyBrief(this)">Copy Brief</button>
+      </div>
+      <div class="prompt-text" id="preview">Fill in the fields above, then click Copy Brief to generate your conversion prompt.</div>
+    </div>
+
+    <div class="callout callout-warning">
+      <strong>If the generated system instruction is only a few sentences</strong> — your Agent Brief was too vague. Return to sections 2 and 3 above, add more specific detail, copy the brief again, and send it to Copilot.
+    </div>
+
+    <div class="step-list">
+      <div class="step-item">
+        <div class="step-dot">1</div>
+        <div class="step-body">
+          <strong>Copy your brief using the button above</strong>
+          <p>The full conversion prompt — with your Agent Brief inside it — is copied to your clipboard.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-dot">2</div>
+        <div class="step-body">
+          <strong>Open M365 Copilot in Work mode and paste</strong>
+          <p>Go to microsoft365.com → open Copilot → select <strong>Work</strong> mode → paste the whole thing and send. Copilot generates your system instruction.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-dot">3</div>
+        <div class="step-body">
+          <strong>Quality check it</strong>
+          <p>Paste the instruction back into the same chat and ask: <em>"What is unclear or ambiguous? What would you have to guess rather than know? List the gaps."</em> Fix what comes up.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-dot">4</div>
+        <div class="step-body">
+          <strong>Save it to your own device</strong>
+          <p>Copy the full instruction into a Word document or notes app. Name it: <em>[Your Task] — System Instruction — July 2026.</em> The sandbox closes when the session ends — your document does not.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>
+
+<!-- ══════════════════════════════════════════════════════
+     SECTION 2 — BUILD GUIDE (checklist)
+══════════════════════════════════════════════════════ -->
+<div class="accordion">
+  <button class="accordion-header" onclick="toggle(this)">
+    <div class="accordion-left">
+      <span class="phase-num">Step 2</span>
+      <div>
+        <div class="accordion-title">Build Guide</div>
+        <div class="accordion-subtitle">Configure your agent in M365 Copilot Agent Builder — tick each step as you go</div>
+      </div>
+    </div>
+    <span class="chevron">▾</span>
+  </button>
+  <div class="accordion-body">
+
+    <div class="callout callout-info">
+      <strong>Have your system instruction saved before you start here.</strong> If you have not yet generated and saved your system instruction, go back to Step 1 first.
+    </div>
+
+    <ul class="build-list">
+      <li class="build-item"><input type="checkbox"><span class="build-num">01</span><div class="build-text"><strong>Open M365 Copilot in Work mode</strong><p>microsoft365.com → sign in → open Copilot → select <strong>Work</strong> from the toggle. If you see Personal, switch to Work — you cannot access Agent Builder in Personal mode.</p></div></li>
+      <li class="build-item"><input type="checkbox"><span class="build-num">02</span><div class="build-text"><strong>Navigate to Agent Builder</strong><p>Left navigation panel → <strong>Agents</strong> section → click <strong>New agent</strong> below any existing agents.</p></div></li>
+      <li class="build-item"><input type="checkbox"><span class="build-num">03</span><div class="build-text"><strong>Click Skip to configure</strong><p>Look for the small link <strong>Skip to configure →</strong> below the text input. Click it — do not type in the box.</p></div></li>
+      <li class="build-item"><input type="checkbox"><span class="build-num">04</span><div class="build-text"><strong>Name and describe your agent</strong><p><strong>Name:</strong> specific to your task — not "My Agent."&nbsp;&nbsp;<strong>Description:</strong> one sentence — what it does and who it serves.</p></div></li>
+      <li class="build-item"><input type="checkbox"><span class="build-num">05</span><div class="build-text"><strong>Paste your system instruction</strong><p>Find the <strong>Instructions</strong> field — the large text area. Paste your complete system instruction. All of it.</p></div></li>
+      <li class="build-item"><input type="checkbox"><span class="build-num">06</span><div class="build-text"><strong>Add knowledge sources</strong><p><strong>Upload:</strong> permanent docs — templates, policy docs, brand guidelines.&nbsp;&nbsp;<strong>Do not upload:</strong> per-request files — attach those in chat when making each request instead.</p></div></li>
+      <li class="build-item"><input type="checkbox"><span class="build-num">07</span><div class="build-text"><strong>Add 3 starter prompts</strong><p>Each needs a <strong>Title</strong> (short label shown as a button) and a <strong>Message</strong> (full prompt sent on click). Make them specific to your three most common requests.</p></div></li>
+      <li class="build-item"><input type="checkbox"><span class="build-num">08</span><div class="build-text"><strong>Switch to Preview and test</strong><p>Click the <strong>Preview</strong> tab. Send a realistic brief — paste context directly into chat if live data is not available. Does the output reflect your professional context?</p></div></li>
+      <li class="build-item"><input type="checkbox"><span class="build-num">09</span><div class="build-text"><strong>Click Create</strong><p>When satisfied, click <strong>Create</strong> in the top right. If output is not right — go back to Configure, update the Instructions field, and test again.</p></div></li>
+      <li class="build-item"><input type="checkbox"><span class="build-num">10</span><div class="build-text"><strong>Save your system instruction before you leave ✓</strong><p>Make sure it is saved to your own device. The sandbox closes when the session ends.</p></div></li>
+    </ul>
+
+    <div class="callout callout-success">
+      <strong>You have built your agent.</strong> The Agent Brief and system instruction you produced today belong to you. Use them to configure your agent in your own M365 environment whenever you are ready.
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     SECTION 3 — TIPS & PROMPTS
+══════════════════════════════════════════════════════ -->
+<div class="accordion">
+  <button class="accordion-header" onclick="toggle(this)">
+    <div class="accordion-left">
+      <span class="phase-num">Step 3</span>
+      <div>
+        <div class="accordion-title">Tips &amp; Prompts</div>
+        <div class="accordion-subtitle">Get better results from your agent every time</div>
+      </div>
+    </div>
+    <span class="chevron">▾</span>
+  </button>
+  <div class="accordion-body">
+
+    <h3>Four things that improve every agent interaction</h3>
+    <div class="tip-grid">
+      <div class="tip-card">
+        <strong>Lead with the outcome</strong>
+        <p>Not "Create a progress note." Instead: "Create an NDIS progress note for [participant] working on Goal 2. Observations: [notes]. Three paragraphs, plain English, no jargon."</p>
+      </div>
+      <div class="tip-card">
+        <strong>Name the audience every time</strong>
+        <p>Even with audience context in your system instruction, naming the specific audience sharpens the output. "Audience: family members — warm, plain English, no clinical terminology."</p>
+      </div>
+      <div class="tip-card">
+        <strong>Give the most important thing first</strong>
+        <p>"The key finding is a 22% increase in response time. Build the status update narrative around what this means for the project timeline."</p>
+      </div>
+      <div class="tip-card">
+        <strong>Use the quality check as a prompt</strong>
+        <p>"Review this output. Does it feel generic or specific to my context? Is there anything a professional in my field would find inaccurate? List what to fix, then rewrite."</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <h3>Before using any output professionally — five questions</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Question</th><th>What to check</th></tr></thead>
+        <tbody>
+          <tr><td>Does it serve the stated aim?</td><td>If you removed a section, would the audience miss anything essential? If not, cut it.</td></tr>
+          <tr><td>Does the structure make sense?</td><td>Does it build logically toward the conclusion? Would a sceptical reader find it convincing?</td></tr>
+          <tr><td>Is the language right for this audience?</td><td>Read one section aloud as if you are the least familiar person in the room. Is it still clear?</td></tr>
+          <tr><td>Are there any risks?</td><td>Unverified claims, legally sensitive content, anything that could mislead. The agent does not know your legal obligations — you do.</td></tr>
+          <tr><td>Does it meet your professional standard?</td><td>Consistent format, appropriate length, correct terminology. Verify the standards you described were followed.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     SECTION 4 — OPPORTUNITY CARDS (post-session ref)
+══════════════════════════════════════════════════════ -->
+<div class="accordion">
+  <button class="accordion-header" onclick="toggle(this)">
+    <div class="accordion-left">
+      <span class="phase-num">Reference</span>
+      <div>
+        <div class="accordion-title">Opportunity Cards</div>
+        <div class="accordion-subtitle">11 sector examples — useful post-session for colleagues and future agents</div>
+      </div>
+    </div>
+    <span class="chevron">▾</span>
+  </button>
+  <div class="accordion-body">
+
+    <div class="callout callout-info">
+      These cards show what a well-formed AI agent opportunity looks like across 11 sectors. Use them after tonight to spark ideas for colleagues, or as a reference when designing your next agent.
+    </div>
+
+    <div class="opp-grid">
+
+      <div class="opp-card"><div class="opp-head" style="background:rgba(76,0,55,0.4);border-bottom:2px solid #4C0037;"><div class="opp-num" style="color:#DD60FF;">01</div><div class="opp-sector">Healthcare &amp; clinical services</div><div class="opp-title">Nothing Gets Missed at Handover</div><div class="opp-role">Clinical staff · Allied health · Nursing</div></div><div class="opp-body"><div class="opp-field"><div class="opp-lbl">Process</div><div class="opp-val">Review patient notes before shift end. Compile actions, medication changes, and alerts for incoming staff.</div></div><div class="opp-field"><div class="opp-lbl">Pain</div><div class="opp-val">Quality varies with how rushed the shift has been. Critical information sometimes missed.</div></div><div class="opp-field"><div class="opp-lbl">Sources</div><div class="opp-val">Shift observations, medication updates, flagged concerns, ward context</div></div><div class="opp-field"><div class="opp-lbl">Produces</div><div class="opp-val">Clear handover summary flagging priority patients, pending actions, and clinical alerts</div></div><div class="opp-field"><div class="opp-lbl">Human</div><div class="opp-val">Clinical judgment, escalation decisions, final accuracy check</div></div></div><div class="opp-foot"><div class="opp-foot-lbl">Example agent name</div><div class="opp-agent">Nothing Gets Missed at Handover</div><div class="opp-success">Complete handover summary ready in under 5 minutes</div></div></div>
+
+      <div class="opp-card"><div class="opp-head" style="background:rgba(1,48,83,0.6);border-bottom:2px solid #013053;"><div class="opp-num" style="color:#67DAFF;">02</div><div class="opp-sector">Disability support &amp; NDIS</div><div class="opp-title">Every Session Gets Recorded</div><div class="opp-role">Support workers · Coordinators · Team leaders</div></div><div class="opp-body"><div class="opp-field"><div class="opp-lbl">Process</div><div class="opp-val">Complete a support session. Write a progress note aligned to NDIS outcomes. Submit within required timeframe.</div></div><div class="opp-field"><div class="opp-lbl">Pain</div><div class="opp-val">NDIS-aligned notes after every session are time-consuming. Quality and compliance vary across a large workforce.</div></div><div class="opp-field"><div class="opp-lbl">Sources</div><div class="opp-val">Participant goals, session observations, NDIS outcome domain, support plan</div></div><div class="opp-field"><div class="opp-lbl">Produces</div><div class="opp-val">NDIS-aligned progress note linking observations to participant goals</div></div><div class="opp-field"><div class="opp-lbl">Human</div><div class="opp-val">Accuracy of observations, safeguarding judgments, final review</div></div></div><div class="opp-foot"><div class="opp-foot-lbl">Example agent name</div><div class="opp-agent">Every Session Gets Recorded</div><div class="opp-success">Compliant progress note drafted in 5 minutes after each session</div></div></div>
+
+      <div class="opp-card"><div class="opp-head" style="background:rgba(0,90,140,0.5);border-bottom:2px solid #005A8C;"><div class="opp-num" style="color:#67DAFF;">03</div><div class="opp-sector">Engineering &amp; project management</div><div class="opp-title">Never Miss a Milestone</div><div class="opp-role">Project managers · Engineers · Consultants</div></div><div class="opp-body"><div class="opp-field"><div class="opp-lbl">Process</div><div class="opp-val">Compile updates from team members. Review meeting notes and task trackers. Write the status update weekly.</div></div><div class="opp-field"><div class="opp-lbl">Pain</div><div class="opp-val">Each update takes 60–90 minutes per project. Tone and format vary. Items missed under pressure.</div></div><div class="opp-field"><div class="opp-lbl">Sources</div><div class="opp-val">Meeting notes, milestone tracker, risk register, previous update</div></div><div class="opp-field"><div class="opp-lbl">Produces</div><div class="opp-val">Structured status update synthesising inputs, flagging risks and blockers</div></div><div class="opp-field"><div class="opp-lbl">Human</div><div class="opp-val">Risk escalation, client relationship tone, technical accuracy, final sign-off</div></div></div><div class="opp-foot"><div class="opp-foot-lbl">Example agent name</div><div class="opp-agent">Never Miss a Milestone</div><div class="opp-success">Weekly status update drafted in 10 minutes instead of 60–90</div></div></div>
+
+      <div class="opp-card"><div class="opp-head" style="background:rgba(2,81,32,0.5);border-bottom:2px solid #025120;"><div class="opp-num" style="color:#CCFF00;">04</div><div class="opp-sector">Aged care &amp; residential services</div><div class="opp-title">Every Family Stays Informed</div><div class="opp-role">Care staff · Coordinators · Administration</div></div><div class="opp-body"><div class="opp-field"><div class="opp-lbl">Process</div><div class="opp-val">Review resident observations. Write a family update in warm, person-centred language.</div></div><div class="opp-field"><div class="opp-lbl">Pain</div><div class="opp-val">Communication quality varies across staff. Consistent updates take time care staff rarely have.</div></div><div class="opp-field"><div class="opp-lbl">Sources</div><div class="opp-val">Resident care observations, highlights or milestones, family communication tone guide</div></div><div class="opp-field"><div class="opp-lbl">Produces</div><div class="opp-val">Warm, person-centred family update in plain English — ready to personalise and send</div></div><div class="opp-field"><div class="opp-lbl">Human</div><div class="opp-val">What to include based on clinical knowledge, sensitive information, final review</div></div></div><div class="opp-foot"><div class="opp-foot-lbl">Example agent name</div><div class="opp-agent">Every Family Stays Informed</div><div class="opp-success">Warm, consistent family update drafted in 5 minutes per resident</div></div></div>
+
+      <div class="opp-card"><div class="opp-head" style="background:rgba(0,107,92,0.5);border-bottom:2px solid #006B5C;"><div class="opp-num" style="color:#CCFF00;">05</div><div class="opp-sector">Research &amp; knowledge work</div><div class="opp-title">Never Lose a Finding</div><div class="opp-role">Researchers · Analysts · Policy officers</div></div><div class="opp-body"><div class="opp-field"><div class="opp-lbl">Process</div><div class="opp-val">Search and read multiple research papers. Extract findings. Write a plain English summary for stakeholders.</div></div><div class="opp-field"><div class="opp-lbl">Pain</div><div class="opp-val">Synthesis takes hours per topic. Stakeholder summaries deprioritised under reporting deadlines.</div></div><div class="opp-field"><div class="opp-lbl">Sources</div><div class="opp-val">Research papers or abstracts, project context, target audience, required format</div></div><div class="opp-field"><div class="opp-lbl">Produces</div><div class="opp-val">Plain English stakeholder summary synthesising key findings and flagging relevance</div></div><div class="opp-field"><div class="opp-lbl">Human</div><div class="opp-val">Interpretation, research direction, what to include or exclude, final accuracy check</div></div></div><div class="opp-foot"><div class="opp-foot-lbl">Example agent name</div><div class="opp-agent">Never Lose a Finding</div><div class="opp-success">Stakeholder summary drafted in 20 minutes instead of several hours</div></div></div>
+
+      <div class="opp-card"><div class="opp-head" style="background:rgba(26,82,118,0.5);border-bottom:2px solid #1A5276;"><div class="opp-num" style="color:#67DAFF;">06</div><div class="opp-sector">IT services &amp; technology support</div><div class="opp-title">Every Incident Gets Documented</div><div class="opp-role">IT support staff · Field engineers · Service managers</div></div><div class="opp-body"><div class="opp-field"><div class="opp-lbl">Process</div><div class="opp-val">Respond to and resolve the incident. Write the report. Document root cause and resolution.</div></div><div class="opp-field"><div class="opp-lbl">Pain</div><div class="opp-val">Report quality varies by engineer. Writing after a stressful incident is time-consuming.</div></div><div class="opp-field"><div class="opp-lbl">Sources</div><div class="opp-val">Incident description, affected systems, timeline, steps taken, resolution outcome</div></div><div class="opp-field"><div class="opp-lbl">Produces</div><div class="opp-val">Structured incident report — root cause, resolution, impact, preventive recommendations</div></div><div class="opp-field"><div class="opp-lbl">Human</div><div class="opp-val">Technical accuracy, escalation decisions, client communication approach</div></div></div><div class="opp-foot"><div class="opp-foot-lbl">Example agent name</div><div class="opp-agent">Every Incident Gets Documented</div><div class="opp-success">Structured incident report completed in 5 minutes instead of 20–30</div></div></div>
+
+      <div class="opp-card"><div class="opp-head" style="background:rgba(204,79,28,0.4);border-bottom:2px solid #CC4F1C;"><div class="opp-num" style="color:#FFCD0E;">07</div><div class="opp-sector">Professional services &amp; consulting</div><div class="opp-title">Every Opportunity Gets a Proposal</div><div class="opp-role">Consultants · Account managers · Business development</div></div><div class="opp-body"><div class="opp-field"><div class="opp-lbl">Process</div><div class="opp-val">Understand a client's problem. Scope a solution. Write a structured proposal tailored to the client.</div></div><div class="opp-field"><div class="opp-lbl">Pain</div><div class="opp-val">Each proposal needs personalising. Writing from scratch is time-intensive. Consistent voice is hard to maintain.</div></div><div class="opp-field"><div class="opp-lbl">Sources</div><div class="opp-val">Client context, problem statement, proposed solution, service catalogue, tone guide</div></div><div class="opp-field"><div class="opp-lbl">Produces</div><div class="opp-val">Structured proposal — problem, solution, value, investment, next steps</div></div><div class="opp-field"><div class="opp-lbl">Human</div><div class="opp-val">Final recommendations, pricing, client relationship nuances, review before sending</div></div></div><div class="opp-foot"><div class="opp-foot-lbl">Example agent name</div><div class="opp-agent">Every Opportunity Gets a Proposal</div><div class="opp-success">First draft proposal ready in 15 minutes with a consistent voice</div></div></div>
+
+      <div class="opp-card"><div class="opp-head" style="background:rgba(125,60,152,0.5);border-bottom:2px solid #7D3C98;"><div class="opp-num" style="color:#DD60FF;">08</div><div class="opp-sector">Customer service &amp; client-facing roles</div><div class="opp-title">No Customer Left Waiting</div><div class="opp-role">Customer service staff · Administrators · Sales support</div></div><div class="opp-body"><div class="opp-field"><div class="opp-lbl">Process</div><div class="opp-val">Receive a customer inquiry. Look up relevant history. Write a professional, accurate response.</div></div><div class="opp-field"><div class="opp-lbl">Pain</div><div class="opp-val">Response quality varies across staff and shifts. Follow-ups regularly slip through.</div></div><div class="opp-field"><div class="opp-lbl">Sources</div><div class="opp-val">Customer inquiry, relevant account history, organisational tone guide</div></div><div class="opp-field"><div class="opp-lbl">Produces</div><div class="opp-val">Professional, on-brand response or follow-up ready to send after a quick review</div></div><div class="opp-field"><div class="opp-lbl">Human</div><div class="opp-val">Pricing exceptions, complaint escalation, personal judgment calls, final review</div></div></div><div class="opp-foot"><div class="opp-foot-lbl">Example agent name</div><div class="opp-agent">No Customer Left Waiting</div><div class="opp-success">Professional customer response drafted in under 3 minutes</div></div></div>
+
+      <div class="opp-card"><div class="opp-head" style="background:rgba(58,26,8,0.7);border-bottom:2px solid #3A1A08;"><div class="opp-num" style="color:#FFCD0E;">09</div><div class="opp-sector">Education &amp; training</div><div class="opp-title">Every Learner Gets Feedback</div><div class="opp-role">Teachers · Trainers · Learning designers</div></div><div class="opp-body"><div class="opp-field"><div class="opp-lbl">Process</div><div class="opp-val">Review student or participant work. Write individual feedback aligned to learning outcomes across large cohorts.</div></div><div class="opp-field"><div class="opp-lbl">Pain</div><div class="opp-val">Writing meaningful personalised feedback for large groups is extremely time-consuming.</div></div><div class="opp-field"><div class="opp-lbl">Sources</div><div class="opp-val">Assessment criteria, learning outcomes, student work, feedback examples</div></div><div class="opp-field"><div class="opp-lbl">Produces</div><div class="opp-val">Constructive, criteria-aligned feedback in an encouraging tone — ready to personalise before returning</div></div><div class="opp-field"><div class="opp-lbl">Human</div><div class="opp-val">Final grade judgment, tone personalisation, anything requiring professional discretion</div></div></div><div class="opp-foot"><div class="opp-foot-lbl">Example agent name</div><div class="opp-agent">Every Learner Gets Feedback</div><div class="opp-success">Criteria-aligned feedback drafted in minutes per learner</div></div></div>
+
+      <div class="opp-card"><div class="opp-head" style="background:rgba(26,107,90,0.5);border-bottom:2px solid #1A6B5A;"><div class="opp-num" style="color:#CCFF00;">10</div><div class="opp-sector">Finance, legal &amp; compliance</div><div class="opp-title">Nothing Slips Through the Audit</div><div class="opp-role">Finance officers · Compliance staff · Legal support</div></div><div class="opp-body"><div class="opp-field"><div class="opp-lbl">Process</div><div class="opp-val">Review transactions, contracts, or compliance records. Identify anomalies. Compile a summary for sign-off.</div></div><div class="opp-field"><div class="opp-lbl">Pain</div><div class="opp-val">Manual review is time-consuming and inconsistent. Patterns across large volumes are hard to spot.</div></div><div class="opp-field"><div class="opp-lbl">Sources</div><div class="opp-val">Records under review, compliance framework, reporting template</div></div><div class="opp-field"><div class="opp-lbl">Produces</div><div class="opp-val">Consistent review summary flagging items requiring attention and recommended actions</div></div><div class="opp-field"><div class="opp-lbl">Human</div><div class="opp-val">Final compliance judgment, escalation decisions, sign-off, legal interpretation</div></div></div><div class="opp-foot"><div class="opp-foot-lbl">Example agent name</div><div class="opp-agent">Nothing Slips Through the Audit</div><div class="opp-success">Consistent review summary prepared in a fraction of the time</div></div></div>
+
+      <div class="opp-card"><div class="opp-head" style="background:rgba(110,44,0,0.5);border-bottom:2px solid #6E2C00;"><div class="opp-num" style="color:#FFCD0E;">11</div><div class="opp-sector">Sales &amp; business development</div><div class="opp-title">Every Opportunity Gets Its Story</div><div class="opp-role">Sales agents · Account managers · Business development</div></div><div class="opp-body"><div class="opp-field"><div class="opp-lbl">Process</div><div class="opp-val">Gather details from a client conversation or briefing. Write a proposal or campaign communication.</div></div><div class="opp-field"><div class="opp-lbl">Pain</div><div class="opp-val">Writing tailored copy for every opportunity is time-consuming. Quality varies under volume pressure.</div></div><div class="opp-field"><div class="opp-lbl">Sources</div><div class="opp-val">Opportunity details, client context, target audience, brand tone guide</div></div><div class="opp-field"><div class="opp-lbl">Produces</div><div class="opp-val">Compelling proposal or client communications in a consistent professional brand voice</div></div><div class="opp-field"><div class="opp-lbl">Human</div><div class="opp-val">Pricing strategy, negotiation decisions, final copy review, client relationship management</div></div></div><div class="opp-foot"><div class="opp-foot-lbl">Example agent name</div><div class="opp-agent">Every Opportunity Gets Its Story</div><div class="opp-success">Professional proposal copy drafted in 10 minutes per opportunity</div></div></div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     SECTION 5 — TRAINING VIDEOS (post-session ref)
+══════════════════════════════════════════════════════ -->
+<div class="accordion">
+  <button class="accordion-header" onclick="toggle(this)">
+    <div class="accordion-left">
+      <span class="phase-num">Reference</span>
+      <div>
+        <div class="accordion-title">Training Videos</div>
+        <div class="accordion-subtitle">Watch after the session — the agent in action, and a full build walkthrough</div>
+      </div>
+    </div>
+    <span class="chevron">▾</span>
+  </button>
+  <div class="accordion-body">
+
+    <h3>Video 1 · ~5 minutes · The agent in action</h3>
+    <p style="font-size:13px;color:#9BB8CC;margin-bottom:12px;">Watch Never Miss a Deadline being used — how it is opened, how a brief is sent, what the output looks like, and what the human still decides.</p>
+    <div class="video-placeholder">
+      <div class="play-btn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><polygon points="8,5 20,12 8,19" fill="white"/></svg></div>
+      <p>Video 1 — link to be added once recorded</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <h3>Video 2 · ~12 minutes · Full build walkthrough</h3>
+    <p style="font-size:13px;color:#9BB8CC;margin-bottom:12px;">The complete process — from a completed Agent Brief through to a working agent in M365 Copilot Agent Builder.</p>
+    <div class="video-placeholder">
+      <div class="play-btn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><polygon points="8,5 20,12 8,19" fill="white"/></svg></div>
+      <p>Video 2 — link to be added once recorded</p>
+    </div>
+
+    <div class="callout callout-info">
+      <strong>Recording note:</strong> these videos are recorded outside the sandbox. In today's session, live connections to Outlook and SharePoint may not be available — test your agent by pasting context directly into chat.
+    </div>
+
+  </div>
+</div>
+
+</div><!-- end .content -->
 
 <button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <script>
-  function toggle(btn) {
-    const body = btn.nextElementSibling;
-    const isOpen = btn.classList.contains('open');
-    document.querySelectorAll('.accordion-header').forEach(h => {
-      h.classList.remove('open');
-      h.nextElementSibling.classList.remove('open');
-    });
-    if (!isOpen) {
-      btn.classList.add('open');
-      body.classList.add('open');
-    }
-  }
-
-  function copyText(btn, id) {
-    navigator.clipboard.writeText(document.getElementById(id).innerText).then(() => {
-      btn.textContent = 'Copied!';
-      btn.classList.add('copied');
-      setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
-    });
-  }
-
-  window.addEventListener('scroll', () => {
-    document.getElementById('btt').classList.toggle('show', window.scrollY > 300);
+function toggle(btn) {
+  const body = btn.nextElementSibling;
+  const isOpen = btn.classList.contains('open');
+  document.querySelectorAll('.accordion-header').forEach(h => {
+    h.classList.remove('open');
+    h.nextElementSibling.classList.remove('open');
   });
+  if (!isOpen) { btn.classList.add('open'); body.classList.add('open'); }
+}
+
+function val(id) {
+  const el = document.getElementById(id);
+  if (!el) return '';
+  return (el.value || el.innerText || '').trim();
+}
+
+function getChecked() {
+  return ['c1','c2','c3','c4','c5','c6']
+    .filter(id => document.getElementById(id).checked)
+    .map(id => document.getElementById(id).parentElement.querySelector('span').textContent.trim());
+}
+
+function compileBrief() {
+  const ticks = getChecked();
+  const brief = [
+    'AGENT BRIEF — UiLab Open House · July 2026',
+    '─'.repeat(52),
+    '',
+    'PART 1 — DISCOVER YOUR OPPORTUNITY',
+    '',
+    'A. Tasks I do most regularly:',
+    val('f-tasks') || '(not completed)',
+    '',
+    'B. Criteria that apply:',
+    ticks.length ? ticks.map(t => '✓  ' + t).join('\n') : '(none ticked)',
+    '',
+    'C. Time currently spent:',
+    val('f-time') || '(not completed)',
+    '',
+    'D. The task I am designing my digital colleague for:',
+    val('f-winner') || '(not completed)',
+    '',
+    '─'.repeat(52),
+    'PART 2 — DESIGN MY DIGITAL COLLEAGUE',
+    '',
+    '1. Agent name:',
+    val('f-name') || '(not completed)',
+    '',
+    'Who uses it and how often:',
+    val('f-user') || '(not completed)',
+    '',
+    '2. Current process and pain points:',
+    val('f-process') || '(not completed)',
+    '',
+    '3. Decision points:',
+    val('f-decisions') || '(not completed)',
+    '',
+    '4. Knowledge sources:',
+    val('f-sources') || '(not completed)',
+    '',
+    '5. What the agent should produce:',
+    val('f-output') || '(not completed)',
+    '',
+    '6. Non-negotiables — what the human still decides:',
+    val('f-human') || '(not completed)',
+    '',
+    '7. Success looks like:',
+    val('f-success') || '(not completed)',
+  ].join('\n');
+
+  return [
+    'I have completed an Agent Brief for a Microsoft 365 declarative agent. Use it to write a complete system instruction ready to paste into M365 Copilot Agent Builder.',
+    '',
+    'The system instruction should:',
+    '- Define the agent\'s role and purpose precisely',
+    '- Specify the knowledge sources it draws from',
+    '- Describe the audience and communication style',
+    '- Set out the output format and structure in detail',
+    '- List what the human still decides and what the agent must never do',
+    '- Include a quality standard the agent applies to every output',
+    '',
+    'Make it specific enough that this agent could not be mistaken for one built for a different professional in a different organisation.',
+    '',
+    'Here is my completed Agent Brief:',
+    '',
+    brief,
+  ].join('\n');
+}
+
+function updatePreview() {
+  document.getElementById('preview').textContent = compileBrief();
+}
+
+function copyBrief(btn) {
+  const text = compileBrief();
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copy Brief'; btn.classList.remove('copied'); }, 2500);
+  });
+}
+
+// Live update preview as user types
+document.addEventListener('input', updatePreview);
+document.addEventListener('change', updatePreview);
+window.addEventListener('load', updatePreview);
+
+window.addEventListener('scroll', () => {
+  document.getElementById('btt').classList.toggle('show', window.scrollY > 300);
+});
 </script>
 </body>
 </html>
