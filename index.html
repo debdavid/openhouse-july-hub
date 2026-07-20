@@ -87,8 +87,8 @@
 
   /* BUILD CHECKLIST */
   .build-list { list-style:none; display:flex; flex-direction:column; gap:8px; margin-bottom:20px; }
-  .build-item { display:flex; align-items:flex-start; gap:12px; background:rgba(255,255,255,0.03); border:1px solid rgba(103,218,255,0.1); border-radius:6px; padding:12px 14px; cursor:pointer; transition:background 0.15s; }
-  .build-item:hover { background:rgba(103,218,255,0.05); }
+  .build-item { display:flex; align-items:flex-start; gap:12px; background:rgba(255,255,255,0.03); border:1px solid rgba(103,218,255,0.1); border-radius:6px; padding:12px 14px; }
+  
   .build-item input[type=checkbox] { width:16px; height:16px; margin-top:1px; flex-shrink:0; accent-color:#3ECFA0; cursor:pointer; }
   .build-num { font-family:'Roboto Mono',monospace; font-size:10px; font-weight:700; color:#DD60FF; white-space:nowrap; margin-top:1px; }
   .build-text strong { display:block; font-size:13.5px; color:#F0EDE8; margin-bottom:2px; }
@@ -152,7 +152,7 @@
 <div class="content">
 
   <div style="margin-bottom:32px;">
-    <p style="font-size:15px;color:#C8D8E4;margin-bottom:12px;">Work through these sections in order during the session. Opportunity Cards and Training Videos are at the bottom as a post-session reference.</p>
+    <p style="font-size:15px;color:#C8D8E4;margin-bottom:12px;">Work through these sections in order during the session. Opportunity Cards are at the bottom as a post-session reference.</p>
     <div class="callout callout-warning">
       <strong>Sandbox environment:</strong> Live connections to email, Teams, and other channels may not be available today. Do not enter personal or sensitive data. You will not have access after tonight — save your system instruction to your own device before you leave. If you have your own Microsoft 365 subscription (Business or higher), you are welcome to use that account and carry your work forward.
     </div>
@@ -322,29 +322,36 @@
     <div class="accordion-left">
       <span class="phase-num">Step 2</span>
       <div>
-        <div class="accordion-title">Build Guide</div>
-        <div class="accordion-subtitle">Configure your agent in M365 Copilot Agent Builder — tick each step as you go</div>
+        <div class="accordion-title">Agent Build Guide</div>
+        <div class="accordion-subtitle">Configure your agent in M365 Copilot Agent Builder — follow each step in order</div>
       </div>
     </div>
     <span class="chevron">▾</span>
   </button>
   <div class="accordion-body">
 
+    <h3>Watch first — then follow the steps below</h3>
+    <p style="font-size:13px;color:#9BB8CC;margin-bottom:12px;">This 10-minute video walks through the complete build process — from saved system instruction to working agent in M365 Copilot Agent Builder. Watch it once, then follow the steps below alongside it.</p>
+    <div class="video-placeholder" id="video-section">
+      <div class="play-btn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><polygon points="8,5 20,12 8,19" fill="white"/></svg></div>
+      <p>Build walkthrough video — link to be added once recorded</p>
+      <p style="font-size:11px;opacity:0.5;">Full Agent Builder build · ~10 minutes</p>
+    </div>
     <div class="callout callout-info">
       <strong>Have your system instruction saved before you start here.</strong> If you have not yet generated and saved your system instruction, go back to Step 1 first.
     </div>
 
     <ul class="build-list">
-      <li class="build-item"><input type="checkbox"><span class="build-num">01</span><div class="build-text"><strong>Open M365 Copilot in Work mode</strong><p>microsoft365.com → sign in → open Copilot → select <strong>Work</strong> from the toggle. If you see Personal, switch to Work — you cannot access Agent Builder in Personal mode.</p></div></li>
-      <li class="build-item"><input type="checkbox"><span class="build-num">02</span><div class="build-text"><strong>Navigate to Agent Builder</strong><p>Left navigation panel → <strong>Agents</strong> section → click <strong>New agent</strong> below any existing agents.</p></div></li>
-      <li class="build-item"><input type="checkbox"><span class="build-num">03</span><div class="build-text"><strong>Click Skip to configure</strong><p>Look for the small link <strong>Skip to configure →</strong> below the text input. Click it — do not type in the box.</p></div></li>
-      <li class="build-item"><input type="checkbox"><span class="build-num">04</span><div class="build-text"><strong>Name and describe your agent</strong><p><strong>Name:</strong> specific to your task — not "My Agent."&nbsp;&nbsp;<strong>Description:</strong> one sentence — what it does and who it serves.</p></div></li>
-      <li class="build-item"><input type="checkbox"><span class="build-num">05</span><div class="build-text"><strong>Paste your system instruction</strong><p>Find the <strong>Instructions</strong> field — the large text area. Paste your complete system instruction. All of it.</p></div></li>
-      <li class="build-item"><input type="checkbox"><span class="build-num">06</span><div class="build-text"><strong>Add knowledge sources</strong><p><strong>Upload:</strong> permanent docs — templates, policy docs, brand guidelines.&nbsp;&nbsp;<strong>Do not upload:</strong> per-request files — attach those in chat when making each request instead.</p></div></li>
-      <li class="build-item"><input type="checkbox"><span class="build-num">07</span><div class="build-text"><strong>Add 3 starter prompts</strong><p>Each needs a <strong>Title</strong> (short label shown as a button) and a <strong>Message</strong> (full prompt sent on click). Make them specific to your three most common requests.</p></div></li>
-      <li class="build-item"><input type="checkbox"><span class="build-num">08</span><div class="build-text"><strong>Switch to Preview and test</strong><p>Click the <strong>Preview</strong> tab. Send a realistic brief — paste context directly into chat if live data is not available. Does the output reflect your professional context?</p></div></li>
-      <li class="build-item"><input type="checkbox"><span class="build-num">09</span><div class="build-text"><strong>Click Create</strong><p>When satisfied, click <strong>Create</strong> in the top right. If output is not right — go back to Configure, update the Instructions field, and test again.</p></div></li>
-      <li class="build-item"><input type="checkbox"><span class="build-num">10</span><div class="build-text"><strong>Save your system instruction before you leave ✓</strong><p>Make sure it is saved to your own device. The sandbox closes when the session ends.</p></div></li>
+      <li class="build-item"><span class="build-num">01</span><div class="build-text"><strong>Open M365 Copilot in Work mode</strong><p>microsoft365.com → sign in → open Copilot → select <strong>Work</strong> from the toggle. If you see Personal, switch to Work — you cannot access Agent Builder in Personal mode.</p></div></li>
+      <li class="build-item"><span class="build-num">02</span><div class="build-text"><strong>Navigate to Agent Builder</strong><p>Left navigation panel → <strong>Agents</strong> section → click <strong>New agent</strong> below any existing agents.</p></div></li>
+      <li class="build-item"><span class="build-num">03</span><div class="build-text"><strong>Click Skip to configure</strong><p>Look for the small link <strong>Skip to configure →</strong> below the text input. Click it — do not type in the box.</p></div></li>
+      <li class="build-item"><span class="build-num">04</span><div class="build-text"><strong>Name and describe your agent</strong><p><strong>Name:</strong> specific to your task — not "My Agent."&nbsp;&nbsp;<strong>Description:</strong> one sentence — what it does and who it serves.</p></div></li>
+      <li class="build-item"><span class="build-num">05</span><div class="build-text"><strong>Paste your system instruction</strong><p>Find the <strong>Instructions</strong> field — the large text area. Paste your complete system instruction. All of it.</p></div></li>
+      <li class="build-item"><span class="build-num">06</span><div class="build-text"><strong>Add knowledge sources</strong><p><strong>Upload:</strong> permanent docs — templates, policy docs, brand guidelines.&nbsp;&nbsp;<strong>Do not upload:</strong> per-request files — attach those in chat when making each request instead.</p></div></li>
+      <li class="build-item"><span class="build-num">07</span><div class="build-text"><strong>Add 3 starter prompts</strong><p>Each needs a <strong>Title</strong> (short label shown as a button) and a <strong>Message</strong> (full prompt sent on click). Make them specific to your three most common requests.</p></div></li>
+      <li class="build-item"><span class="build-num">08</span><div class="build-text"><strong>Switch to Preview and test</strong><p>Click the <strong>Preview</strong> tab. Send a realistic brief — paste context directly into chat if live data is not available. Does the output reflect your professional context?</p></div></li>
+      <li class="build-item"><span class="build-num">09</span><div class="build-text"><strong>Click Create</strong><p>When satisfied, click <strong>Create</strong> in the top right. If output is not right — go back to Configure, update the Instructions field, and test again.</p></div></li>
+      <li class="build-item"><span class="build-num">10</span><div class="build-text"><strong>Save your system instruction before you leave ✓</strong><p>Make sure it is saved to your own device. The sandbox closes when the session ends.</p></div></li>
     </ul>
 
     <div class="callout callout-success">
@@ -453,45 +460,6 @@
       <div class="opp-card"><div class="opp-head" style="background:rgba(110,44,0,0.5);border-bottom:2px solid #6E2C00;"><div class="opp-num" style="color:#FFCD0E;">11</div><div class="opp-sector">Sales &amp; business development</div><div class="opp-title">Every Opportunity Gets Its Story</div><div class="opp-role">Sales agents · Account managers · Business development</div></div><div class="opp-body"><div class="opp-field"><div class="opp-lbl">Process</div><div class="opp-val">Gather details from a client conversation or briefing. Write a proposal or campaign communication.</div></div><div class="opp-field"><div class="opp-lbl">Pain</div><div class="opp-val">Writing tailored copy for every opportunity is time-consuming. Quality varies under volume pressure.</div></div><div class="opp-field"><div class="opp-lbl">Sources</div><div class="opp-val">Opportunity details, client context, target audience, brand tone guide</div></div><div class="opp-field"><div class="opp-lbl">Produces</div><div class="opp-val">Compelling proposal or client communications in a consistent professional brand voice</div></div><div class="opp-field"><div class="opp-lbl">Human</div><div class="opp-val">Pricing strategy, negotiation decisions, final copy review, client relationship management</div></div></div><div class="opp-foot"><div class="opp-foot-lbl">Example agent name</div><div class="opp-agent">Every Opportunity Gets Its Story</div><div class="opp-success">Professional proposal copy drafted in 10 minutes per opportunity</div></div></div>
 
     </div>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════════════════
-     SECTION 5 — TRAINING VIDEOS (post-session ref)
-══════════════════════════════════════════════════════ -->
-<div class="accordion">
-  <button class="accordion-header" onclick="toggle(this)">
-    <div class="accordion-left">
-      <span class="phase-num">Reference</span>
-      <div>
-        <div class="accordion-title">Training Videos</div>
-        <div class="accordion-subtitle">Watch after the session — the agent in action, and a full build walkthrough</div>
-      </div>
-    </div>
-    <span class="chevron">▾</span>
-  </button>
-  <div class="accordion-body">
-
-    <h3>Video 1 · ~5 minutes · The agent in action</h3>
-    <p style="font-size:13px;color:#9BB8CC;margin-bottom:12px;">Watch Never Miss a Deadline being used — how it is opened, how a brief is sent, what the output looks like, and what the human still decides.</p>
-    <div class="video-placeholder">
-      <div class="play-btn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><polygon points="8,5 20,12 8,19" fill="white"/></svg></div>
-      <p>Video 1 — link to be added once recorded</p>
-    </div>
-
-    <div class="divider"></div>
-
-    <h3>Video 2 · ~12 minutes · Full build walkthrough</h3>
-    <p style="font-size:13px;color:#9BB8CC;margin-bottom:12px;">The complete process — from a completed Agent Brief through to a working agent in M365 Copilot Agent Builder.</p>
-    <div class="video-placeholder">
-      <div class="play-btn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><polygon points="8,5 20,12 8,19" fill="white"/></svg></div>
-      <p>Video 2 — link to be added once recorded</p>
-    </div>
-
-    <div class="callout callout-info">
-      <strong>Recording note:</strong> these videos are recorded outside the sandbox. In today's session, live connections to Outlook and SharePoint may not be available — test your agent by pasting context directly into chat.
-    </div>
-
   </div>
 </div>
 
