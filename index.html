@@ -1,1 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Step 1 · Generate Your System Instruction — UiLab Open House July 2026</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="copy-toast" id="toast">Copied!</div>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="ui">Ui</span><span class="lab">Lab Open House · July 2026</span></a>
+  <div class="nav-links">
+    <a href="index.html" class="active">1 · System Instruction</a>
+    <a href="videos.html">2 · Training Videos</a>
+    <a href="build-guide.html">3 · Build Guide</a>
+    <a href="tips.html">4 · Tips &amp; Prompts</a>
+  </div>
+</nav>
+<div class="grad-bar"></div>
+<div class="hero">
+  <div class="eyebrow">Step 1 of 3 · Before you open Agent Builder</div>
+  <h1>Generate your <span>system instruction.</span></h1>
+  <p>Paste this prompt into M365 Copilot in Work mode with your completed Agent Brief. Your system instruction will be generated and ready to paste into Agent Builder.</p>
+</div>
+<main class="main">
 
+  <div class="section-eyebrow">The conversion prompt</div>
+  <h2>Paste this into M365 Copilot — Work mode.</h2>
+  <p>Copy the prompt below. At the very end, paste your completed Agent Brief — every section from 1 to 6. Send it to Copilot. Your system instruction will be generated in full.</p>
+
+  <div class="prompt-box">
+    <div class="prompt-label"><span>System instruction generator — paste into M365 Copilot (Work mode)</span><button class="copy-btn" onclick="cp('p1',this)">Copy</button></div>
+    <pre id="p1">I have completed an Agent Brief for a Microsoft 365 declarative agent. Use it to write a complete system instruction ready to paste into M365 Copilot Agent Builder.
+
+Apply the ARC, OEMGPC, and P-PASS frameworks as governing principles:
+
+ARC (Aim, Route, Checkpoints): Establish the Aim of every request before producing output. Map the Route — the logical path to the output. Apply 2–3 Checkpoints to confirm the output meets the aim.
+
+OEMGPC (Orient, Explain, Model, Guide, Pre-empt, Commit): Every output must orient the user, explain the core content, model it with an example where relevant, guide the user on what it means for them, pre-empt the most likely question, and commit with a clear next step.
+
+P-PASS (Purpose, Persuasion, Audience, Safety, Standards): Before finalising output, check: does it serve the Purpose? Does it earn the Persuasion? Is the language right for this Audience? Are there Safety risks? Does it meet the professional Standards required?
+
+Make the system instruction specific enough that this agent could not be mistaken for one built for a different professional in a different organisation.
+
+Here is my completed Agent Brief:
+
+[paste your Agent Brief sections 1–6 here]</pre>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section-eyebrow">What to do next</div>
+  <h2>Three steps after you generate.</h2>
+
+  <div class="step-row"><div class="step-n">1</div><div class="step-c"><h3>Quality check it</h3><p>Paste the generated instruction back into the same Copilot chat and ask: <em>"What is unclear or ambiguous in these instructions? What would you have to guess about rather than know?"</em> Fix what comes up.</p></div></div>
+  <div class="step-row"><div class="step-n">2</div><div class="step-c"><h3>Save a copy</h3><p>Copy the full instruction to a Word document or notes app. Name it: <em>[Your Task] — System Instruction — July 2026.</em> Save before you open Agent Builder.</p></div></div>
+  <div class="step-row"><div class="step-n">3</div><div class="step-c"><h3>Go to the Build Guide</h3><p>Your instruction is ready. Go to Page 3 — the Build Guide — to configure your agent in M365 Copilot Agent Builder.</p></div></div>
+
+  <div class="hl"><p><strong>The rule:</strong> if your generated instruction is only a few sentences, your Agent Brief was too vague. Return to sections 2 and 3 of the brief, add more specific detail, then regenerate. A well-formed instruction is several hundred to several thousand words.</p></div>
+
+  <div style="margin-top:28px;display:flex;justify-content:flex-end;">
+    <a href="videos.html" style="background:var(--burg);color:var(--white);text-decoration:none;font-family:'Syne',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;padding:11px 26px;border-radius:8px;">Next: Training Videos →</a>
+  </div>
+</main>
+<footer>
+  <p>UiLab Open House · July 2026 · Logan City Council</p>
+  <nav class="footer-nav">
+    <a href="index.html">System Instruction</a>
+    <a href="videos.html">Training Videos</a>
+    <a href="build-guide.html">Build Guide</a>
+    <a href="tips.html">Tips &amp; Prompts</a>
+  </nav>
+</footer>
+<script>function cp(id,btn){navigator.clipboard.writeText(document.getElementById(id).innerText).then(()=>{btn.textContent='Copied!';btn.classList.add('copied');const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>{btn.textContent='Copy';btn.classList.remove('copied');t.classList.remove('show');},2500);});}</script>
+</body>
+</html>
