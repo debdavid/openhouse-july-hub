@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>UiLab Resource Hub — July 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/docx@8.5.0/build/index.js"></script>
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body { background-color:#013053; color:#F0EDE8; font-family:'PP Neue Montreal','Inter','Helvetica Neue',Arial,sans-serif; line-height:1.6; min-height:100vh; }
@@ -273,14 +274,14 @@
         <span class="prompt-label-txt">Your conversion prompt — ready to paste into M365 Copilot (Work mode)</span>
         <div style="display:flex;gap:8px;flex-shrink:0;">
           <button class="copy-btn" id="copyBtn" onclick="copyBrief(this)">Copy Brief</button>
-          <button class="copy-btn" id="dlBtn" onclick="downloadBrief()" style="background:rgba(62,207,160,0.15);border-color:rgba(62,207,160,0.4);color:#3ECFA0;">Save Brief</button>
+          <button class="copy-btn" id="dlBtn" onclick="downloadBrief()" style="background:rgba(62,207,160,0.15);border-color:rgba(62,207,160,0.4);color:#3ECFA0;">Download Brief (.docx)</button>
         </div>
       </div>
       <div class="prompt-text" id="preview">Fill in the fields above, then click Copy Brief to generate your conversion prompt.</div>
     </div>
 
     <div class="callout callout-success">
-      <strong>Save your work now — and again after any changes.</strong> Click <strong>Save Brief</strong> above to download your completed Agent Brief as a text file to your device. It is named automatically using your agent name. If your browser closes, the sandbox times out, or you need to pick up where you left off — your saved file contains everything you need.
+      <strong>Save your work now — and again after any changes.</strong> Click <strong>Download Brief</strong> above to download your completed Agent Brief as a text file to your device. It is named automatically using your agent name. If your browser closes, the sandbox times out, or you need to pick up where you left off — your saved file contains everything you need.
     </div>
 
     <div class="callout callout-warning">
@@ -592,21 +593,154 @@ function copyBrief(btn) {
 }
 
 function downloadBrief() {
-  var brief = buildBriefText();
-  var agentName = (val('f-name') || 'Agent Brief').replace(/[^a-zA-Z0-9 _\-]/g, '').trim() || 'Agent Brief';
-  var filename = agentName + ' \u2014 Agent Brief \u2014 July 2026.txt';
-  var blob = new Blob([brief], { type: 'text/plain;charset=utf-8' });
-  var url = URL.createObjectURL(blob);
-  var a = document.createElement('a');
-  a.href = url;
-  a.download = filename;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
-  var btn = document.getElementById('dlBtn');
-  btn.textContent = 'Saved!';
-  setTimeout(function() { btn.textContent = 'Save Brief'; }, 2500);
+  var agentName = (val('f-name') || 'Agent Brief').replace(/[^a-zA-Z0-9 _-]/g, '').trim() || 'Agent Brief';
+  var ticks = getChecked();
+  var BURG = '4C0037', WATER = '013053', SKY = '005A8C', SUM = 'CC4F1C', MID = '3A1A08';
+
+  var D = docx;
+
+  function p(text, opts) {
+    opts = opts || {};
+    return new D.Paragraph({
+      children: [new D.TextRun({ text: text || '', color: opts.color || MID, size: opts.size || 20, font: 'Arial', bold: opts.bold || false, italics: opts.italics || false })],
+      spacing: { before: opts.before || 60, after: opts.after || 60 },
+      indent: opts.indent ? { left: opts.indent } : undefined,
+    });
+  }
+
+  function eyebrow(text) {
+    return new D.Paragraph({
+      children: [new D.TextRun({ text: text.toUpperCase(), color: SUM, size: 17, font: 'Arial', bold: true, characterSpacing: 40 })],
+      spacing: { before: 280, after: 60 },
+    });
+  }
+
+  function h1(text) {
+    return new D.Paragraph({
+      children: [new D.TextRun({ text: text, color: BURG, size: 30, font: 'Arial', bold: true })],
+      spacing: { before: 60, after: 100 },
+      border: { bottom: { style: D.BorderStyle.SINGLE, size: 4, color: BURG } },
+    });
+  }
+
+  function h2(text) {
+    return new D.Paragraph({
+      children: [new D.TextRun({ text: text, color: SKY, size: 22, font: 'Arial', bold: true })],
+      spacing: { before: 160, after: 50 },
+      indent: { left: 160 },
+      border: { left: { style: D.BorderStyle.SINGLE, size: 10, color: SKY } },
+    });
+  }
+
+  function field(label, value) {
+    var rows = [];
+    // Label row
+    rows.push(new D.TableRow({ children: [new D.TableCell({
+      columnSpan: 1,
+      width: { size: 9200, type: D.WidthType.DXA },
+      shading: { type: D.ShadingType.CLEAR, fill: 'E8F0F8' },
+      margins: { top: 60, bottom: 60, left: 120, right: 120 },
+      borders: {
+        top: { style: D.BorderStyle.SINGLE, size: 4, color: 'AAAAAA' },
+        bottom: { style: D.BorderStyle.NONE },
+        left: { style: D.BorderStyle.SINGLE, size: 12, color: SKY },
+        right: { style: D.BorderStyle.SINGLE, size: 4, color: 'AAAAAA' },
+      },
+      children: [new D.Paragraph({ children: [new D.TextRun({ text: label.toUpperCase(), color: SKY, size: 17, font: 'Courier New', bold: true, characterSpacing: 20 })], spacing: { before: 0, after: 0 } })],
+    })] }));
+    // Value row
+    var lines = (value || '(not completed)').split('\n');
+    rows.push(new D.TableRow({ children: [new D.TableCell({
+      width: { size: 9200, type: D.WidthType.DXA },
+      shading: { type: D.ShadingType.CLEAR, fill: 'FAFAFA' },
+      margins: { top: 80, bottom: 100, left: 120, right: 120 },
+      borders: {
+        top: { style: D.BorderStyle.NONE },
+        bottom: { style: D.BorderStyle.SINGLE, size: 4, color: 'AAAAAA' },
+        left: { style: D.BorderStyle.SINGLE, size: 12, color: SKY },
+        right: { style: D.BorderStyle.SINGLE, size: 4, color: 'AAAAAA' },
+      },
+      children: lines.map(function(line) {
+        return new D.Paragraph({ children: [new D.TextRun({ text: line || ' ', color: MID, size: 20, font: 'Arial' })], spacing: { before: 20, after: 20 } });
+      }),
+    })] }));
+    return new D.Table({
+      width: { size: 9200, type: D.WidthType.DXA },
+      columnWidths: [9200],
+      rows: rows,
+      margins: { top: 80, bottom: 80 },
+    });
+  }
+
+  function sp() { return new D.Paragraph({ children: [new D.TextRun({ text: '' })], spacing: { before: 0, after: 80 } }); }
+
+  var children = [
+    // Cover
+    new D.Paragraph({ children: [new D.TextRun({ text: 'Agent Brief', color: BURG, size: 52, font: 'Arial', bold: true })], spacing: { before: 0, after: 60 } }),
+    new D.Paragraph({ children: [new D.TextRun({ text: agentName, color: SKY, size: 30, font: 'Arial', bold: true })], spacing: { before: 0, after: 60 } }),
+    new D.Paragraph({ children: [new D.TextRun({ text: 'UiLab Open House  ·  July 2026', color: '666666', size: 18, font: 'Courier New' }) ], spacing: { before: 0, after: 280 } }),
+
+    eyebrow('Part 1 — Discover your opportunity'),
+    h1('Your task'),
+    sp(),
+    field('A. Tasks I do most regularly', val('f-tasks')),
+    sp(),
+
+    // Checklist as a field
+    field('B. Criteria that apply', ticks.length ? ticks.map(function(t){ return '✓  ' + t; }).join('\n') : '(none selected)'),
+    sp(),
+    field('C. Time currently spent on this task', val('f-time')),
+    sp(),
+    field('D. The task I am designing my digital colleague for', val('f-winner')),
+    sp(),
+
+    eyebrow('Part 2 — Design your digital colleague'),
+    h1('Your agent design'),
+    sp(),
+    field('1. Agent name', val('f-name')),
+    sp(),
+    field('Who uses it and how often', val('f-user')),
+    sp(),
+    field('2. Current process and pain points', val('f-process')),
+    sp(),
+    field('3. Decision points', val('f-decisions')),
+    sp(),
+    field('4. Knowledge sources', val('f-sources')),
+    sp(),
+    field('5. What the agent should produce', val('f-output')),
+    sp(),
+    field('6. Non-negotiables — what the human still decides', val('f-human')),
+    sp(),
+    field('7. Success looks like...', val('f-success')),
+    sp(), sp(),
+
+    new D.Paragraph({
+      children: [new D.TextRun({ text: 'UiLab Open House  ·  July 2026', color: SKY, size: 16, font: 'Courier New' })],
+      alignment: D.AlignmentType.CENTER,
+      spacing: { before: 200, after: 0 },
+    }),
+  ];
+
+  var doc = new D.Document({
+    sections: [{ properties: { page: { size: { width: 11906, height: 16838 }, margin: { top: 1080, bottom: 1080, left: 1080, right: 1080 } } }, children: children }]
+  });
+
+  D.Packer.toBlob(doc).then(function(blob) {
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = agentName + ' — Agent Brief — July 2026.docx';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    var btn = document.getElementById('dlBtn');
+    btn.textContent = 'Downloaded!';
+    setTimeout(function() { btn.textContent = 'Download Brief (.docx)'; }, 2500);
+  }).catch(function(err) {
+    console.error('DOCX error:', err);
+    alert('Could not generate Word document. Please try the Copy Brief button instead.');
+  });
 }
 
 document.addEventListener('input', updatePreview);
