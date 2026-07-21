@@ -152,7 +152,7 @@
 <div class="content">
 
   <div style="margin-bottom:32px;">
-    <p style="font-size:15px;color:#C8D8E4;margin-bottom:12px;">Work through these sections in order during the session. Opportunity Cards are at the bottom as a post-session reference.</p>
+    <p style="font-size:15px;color:#C8D8E4;margin-bottom:12px;">Work through these sections in order during the session. Opportunity Cards and Tips &amp; Prompts are at the bottom as reference material.</p>
     <div class="callout callout-warning">
       <strong>Sandbox environment:</strong> Live connections to email, Teams, and other channels may not be available today. Do not enter personal or sensitive data. You will not have access after tonight — save your system instruction to your own device before you leave. If you have your own Microsoft 365 subscription (Business or higher), you are welcome to use that account and carry your work forward.
     </div>
@@ -268,19 +268,36 @@
 
     <div style="height:20px;"></div>
 
-    <div class="prompt-block">
-      <div class="prompt-header">
-        <span class="prompt-label-txt">Your conversion prompt — ready to paste into M365 Copilot (Work mode)</span>
-        <div style="display:flex;gap:8px;flex-shrink:0;">
-          <button class="copy-btn" id="copyBtn" onclick="copyBrief(this)">Copy Brief</button>
-          <button class="copy-btn" id="dlBtn" onclick="downloadBrief()" style="background:rgba(62,207,160,0.15);border-color:rgba(62,207,160,0.4);color:#3ECFA0;">Download Brief (.doc)</button>
+    <div style="background:#010e1c;border:1px solid rgba(103,218,255,0.2);border-radius:10px;overflow:hidden;margin:16px 0;">
+
+      <!-- Header -->
+      <div style="padding:12px 18px 10px;background:rgba(103,218,255,0.06);border-bottom:1px solid rgba(103,218,255,0.12);">
+        <div style="font-family:'Roboto Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#67DAFF;margin-bottom:3px;">Auto-populated prompt</div>
+        <div style="font-size:12px;color:#9BB8CC;">Your answers above are automatically added to this prompt as you type.</div>
+      </div>
+
+      <!-- Live preview -->
+      <div id="preview" style="padding:14px 18px;font-family:'Roboto Mono',monospace;font-size:11.5px;line-height:1.75;color:#C8D8E4;white-space:pre-wrap;word-break:break-word;max-height:280px;overflow-y:auto;"></div>
+
+      <!-- Big clear instruction -->
+      <div style="padding:18px 18px 14px;background:rgba(221,96,255,0.1);border-top:2px solid #DD60FF;">
+        <div style="font-size:20px;font-weight:700;color:#F0EDE8;line-height:1.35;margin-bottom:14px;">
+          &#128072; Copy this prompt and paste it into M365 Copilot or ChatGPT to generate your system instruction.
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;">
+          <button class="copy-btn" id="copyBtn" onclick="copyBrief(this)" style="font-size:13px;padding:10px 22px;background:#DD60FF;border-color:#DD60FF;color:#013053;font-weight:700;">&#128203; Copy Prompt</button>
+          <button class="copy-btn" id="dlBtn" onclick="downloadBrief()" style="font-size:13px;padding:10px 22px;background:rgba(62,207,160,0.15);border-color:rgba(62,207,160,0.5);color:#3ECFA0;font-weight:700;">&#128190; Save Brief (.doc)</button>
+        </div>
+        <div style="font-size:12px;color:rgba(240,237,232,0.55);line-height:1.6;">
+          <strong style="color:rgba(240,237,232,0.8);">Copy Prompt</strong> copies your completed brief + the AI instruction as one message — paste it directly into Copilot or ChatGPT and send it.<br>
+          <strong style="color:rgba(240,237,232,0.8);">Save Brief</strong> downloads a Word document of your brief to your device so you do not lose your work.
         </div>
       </div>
-      <div class="prompt-text" id="preview">Fill in the fields above, then click Copy Brief to generate your conversion prompt.</div>
+
     </div>
 
     <div class="callout callout-success">
-      <strong>Save your work now — and again after any changes.</strong> Click <strong>Download Brief</strong> above to download your completed Agent Brief as a text file to your device. It is named automatically using your agent name. If your browser closes, the sandbox times out, or you need to pick up where you left off — your saved file contains everything you need.
+      <strong>Save your work now — and again after any changes.</strong> Click <strong>Save Brief</strong> above to download your completed Agent Brief as a text file to your device. It is named automatically using your agent name. If your browser closes, the sandbox times out, or you need to pick up where you left off — your saved file contains everything you need.
     </div>
 
     <div class="callout callout-warning">
@@ -291,36 +308,22 @@
       <div class="step-item">
         <div class="step-dot">1</div>
         <div class="step-body">
-          <strong>Click Copy Brief above</strong>
-          <p>Your completed Agent Brief is compiled inside the conversion prompt and copied to your clipboard in one action — ready to paste directly into Copilot.</p>
+          <strong>Paste into M365 Copilot or ChatGPT and send</strong>
+          <p>Click <strong>Copy Prompt</strong> above, then open M365 Copilot (Work mode) or ChatGPT, paste, and send. The AI will generate your complete system instruction.</p>
         </div>
       </div>
       <div class="step-item">
         <div class="step-dot">2</div>
         <div class="step-body">
-          <strong>Click Save Brief above</strong>
-          <p>Download your Agent Brief as a text file to your device before you move on. If your browser closes or the sandbox times out, your saved file contains everything you need. Save it now and again after any changes.</p>
+          <strong>Quality check the system instruction</strong>
+          <p>Paste the generated instruction back into the same chat and send this: <em>"What is unclear or ambiguous? What would you have to guess rather than know for certain? List the gaps."</em> Fix any gaps in your brief above, click Copy Prompt again, and resend. Repeat until nothing significant comes back.</p>
         </div>
       </div>
       <div class="step-item">
         <div class="step-dot">3</div>
         <div class="step-body">
-          <strong>Open M365 Copilot in Work mode and paste</strong>
-          <p>Go to <strong>microsoft365.com</strong> → open Copilot → select <strong>Work</strong> mode from the toggle at the top. Paste the full conversion prompt and send it. Copilot generates your complete system instruction.</p>
-        </div>
-      </div>
-      <div class="step-item">
-        <div class="step-dot">4</div>
-        <div class="step-body">
-          <strong>Quality check your system instruction</strong>
-          <p>Paste the generated instruction back into the same Copilot chat and send: <em>"What is unclear or ambiguous in these instructions? What would you have to guess rather than know for certain? List the gaps."</em> Go back to your brief, fix the gaps, click Copy Brief again, and regenerate. Repeat until the quality check returns nothing significant.</p>
-        </div>
-      </div>
-      <div class="step-item">
-        <div class="step-dot">5</div>
-        <div class="step-body">
-          <strong>Save your system instruction to your own device</strong>
-          <p>Copy the final instruction into a Word document or notes app. Name it: <em>[Your Agent Name] — System Instruction — July 2026.</em> The sandbox closes when the session ends — your document does not.</p>
+          <strong>Save your system instruction</strong>
+          <p>Copy the final instruction into a Word doc or notes app on your device. Name it: <em>[Your Agent Name] — System Instruction — July 2026.</em> This is yours to keep — save it before you move to the Agent Build Guide.</p>
         </div>
       </div>
     </div>
@@ -356,7 +359,7 @@
     </div>
 
     <ul class="build-list">
-      <li class="build-item"><span class="build-num">01</span><div class="build-text"><strong>Open M365 Copilot in Work mode</strong><p>microsoft365.com → sign in → open Copilot → select <strong>Work</strong> from the toggle. If you see Personal, switch to Work — you cannot access Agent Builder in Personal mode.</p></div></li>
+      <li class="build-item"><span class="build-num">01</span><div class="build-text"><strong>Log in to M365 Copilot in Work mode</strong><p>You should already be logged in from earlier — confirm you are in <strong>Work</strong> mode, not Personal. If not, go to microsoft365.com and sign in.</p></div></li>
       <li class="build-item"><span class="build-num">02</span><div class="build-text"><strong>Navigate to Agent Builder</strong><p>Left navigation panel → <strong>Agents</strong> section → click <strong>New agent</strong> below any existing agents.</p></div></li>
       <li class="build-item"><span class="build-num">03</span><div class="build-text"><strong>Click Skip to configure</strong><p>Look for the small link <strong>Skip to configure →</strong> below the text input. Click it — do not type in the box.</p></div></li>
       <li class="build-item"><span class="build-num">04</span><div class="build-text"><strong>Name and describe your agent</strong><p><strong>Name:</strong> specific to your task — not "My Agent."&nbsp;&nbsp;<strong>Description:</strong> one sentence — what it does and who it serves.</p></div></li>
@@ -381,10 +384,10 @@
 <div class="accordion">
   <button class="accordion-header" onclick="toggle(this)">
     <div class="accordion-left">
-      <span class="phase-num">Step 3</span>
+      <span class="phase-num">Reference</span>
       <div>
         <div class="accordion-title">Tips &amp; Prompts</div>
-        <div class="accordion-subtitle">Get better results from your agent every time</div>
+        <div class="accordion-subtitle">Useful during and after the session — not a required step</div>
       </div>
     </div>
     <span class="chevron">▾</span>
