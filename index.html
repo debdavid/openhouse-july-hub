@@ -175,7 +175,7 @@
   <div class="accordion-body open">
 
     <div class="callout callout-info">
-      <strong>How to use this form.</strong> You have already completed the paper worksheet at your table. Transfer your answers into the fields below — then click <strong>Copy Brief</strong> at the bottom. This compiles your brief inside the conversion prompt, ready to paste into M365 Copilot in one go.
+      <strong>How to use this form.</strong> Work through each section below — the more specific your answers, the better your agent will be. As you type, the preview panel updates live so you can see exactly what will be sent to Copilot. When you are done, click <strong>Copy Brief</strong> to copy the full conversion prompt to your clipboard, and <strong>Save Brief</strong> to download a copy to your device.
     </div>
 
     <h3>Part 1 — Your opportunity</h3>
@@ -271,9 +271,16 @@
     <div class="prompt-block">
       <div class="prompt-header">
         <span class="prompt-label-txt">Your conversion prompt — ready to paste into M365 Copilot (Work mode)</span>
-        <button class="copy-btn" id="copyBtn" onclick="copyBrief(this)">Copy Brief</button>
+        <div style="display:flex;gap:8px;flex-shrink:0;">
+          <button class="copy-btn" id="copyBtn" onclick="copyBrief(this)">Copy Brief</button>
+          <button class="copy-btn" id="dlBtn" onclick="downloadBrief()" style="background:rgba(62,207,160,0.15);border-color:rgba(62,207,160,0.4);color:#3ECFA0;">Save Brief</button>
+        </div>
       </div>
       <div class="prompt-text" id="preview">Fill in the fields above, then click Copy Brief to generate your conversion prompt.</div>
+    </div>
+
+    <div class="callout callout-success">
+      <strong>Save your work now — and again after any changes.</strong> Click <strong>Save Brief</strong> above to download your completed Agent Brief as a text file to your device. It is named automatically using your agent name. If your browser closes, the sandbox times out, or you need to pick up where you left off — your saved file contains everything you need.
     </div>
 
     <div class="callout callout-warning">
@@ -284,29 +291,36 @@
       <div class="step-item">
         <div class="step-dot">1</div>
         <div class="step-body">
-          <strong>Copy your brief using the button above</strong>
-          <p>The full conversion prompt — with your Agent Brief inside it — is copied to your clipboard.</p>
+          <strong>Click Copy Brief above</strong>
+          <p>Your completed Agent Brief is compiled inside the conversion prompt and copied to your clipboard in one action — ready to paste directly into Copilot.</p>
         </div>
       </div>
       <div class="step-item">
         <div class="step-dot">2</div>
         <div class="step-body">
-          <strong>Open M365 Copilot in Work mode and paste</strong>
-          <p>Go to microsoft365.com → open Copilot → select <strong>Work</strong> mode → paste the whole thing and send. Copilot generates your system instruction.</p>
+          <strong>Click Save Brief above</strong>
+          <p>Download your Agent Brief as a text file to your device before you move on. If your browser closes or the sandbox times out, your saved file contains everything you need. Save it now and again after any changes.</p>
         </div>
       </div>
       <div class="step-item">
         <div class="step-dot">3</div>
         <div class="step-body">
-          <strong>Quality check it</strong>
-          <p>Paste the instruction back into the same chat and ask: <em>"What is unclear or ambiguous? What would you have to guess rather than know? List the gaps."</em> Fix what comes up.</p>
+          <strong>Open M365 Copilot in Work mode and paste</strong>
+          <p>Go to <strong>microsoft365.com</strong> → open Copilot → select <strong>Work</strong> mode from the toggle at the top. Paste the full conversion prompt and send it. Copilot generates your complete system instruction.</p>
         </div>
       </div>
       <div class="step-item">
         <div class="step-dot">4</div>
         <div class="step-body">
-          <strong>Save it to your own device</strong>
-          <p>Copy the full instruction into a Word document or notes app. Name it: <em>[Your Task] — System Instruction — July 2026.</em> The sandbox closes when the session ends — your document does not.</p>
+          <strong>Quality check your system instruction</strong>
+          <p>Paste the generated instruction back into the same Copilot chat and send: <em>"What is unclear or ambiguous in these instructions? What would you have to guess rather than know for certain? List the gaps."</em> Go back to your brief, fix the gaps, click Copy Brief again, and regenerate. Repeat until the quality check returns nothing significant.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-dot">5</div>
+        <div class="step-body">
+          <strong>Save your system instruction to your own device</strong>
+          <p>Copy the final instruction into a Word document or notes app. Name it: <em>[Your Agent Name] — System Instruction — July 2026.</em> The sandbox closes when the session ends — your document does not.</p>
         </div>
       </div>
     </div>
@@ -338,7 +352,7 @@
       <p style="font-size:11px;opacity:0.5;">Full Agent Builder build · ~10 minutes</p>
     </div>
     <div class="callout callout-info">
-      <strong>Have your system instruction saved before you start here.</strong> If you have not yet generated and saved your system instruction, go back to Step 1 first.
+      <strong>Before you start here, make sure you have:</strong> completed your Agent Brief (Step 1), clicked Copy Brief, clicked Save Brief to download your brief, generated your system instruction in Copilot, quality checked it, and saved it to your device. Go back to Step 1 if you have not done all of these.
     </div>
 
     <ul class="build-list">
@@ -351,7 +365,7 @@
       <li class="build-item"><span class="build-num">07</span><div class="build-text"><strong>Add 3 starter prompts</strong><p>Each needs a <strong>Title</strong> (short label shown as a button) and a <strong>Message</strong> (full prompt sent on click). Make them specific to your three most common requests.</p></div></li>
       <li class="build-item"><span class="build-num">08</span><div class="build-text"><strong>Switch to Preview and test</strong><p>Click the <strong>Preview</strong> tab. Send a realistic brief — paste context directly into chat if live data is not available. Does the output reflect your professional context?</p></div></li>
       <li class="build-item"><span class="build-num">09</span><div class="build-text"><strong>Click Create</strong><p>When satisfied, click <strong>Create</strong> in the top right. If output is not right — go back to Configure, update the Instructions field, and test again.</p></div></li>
-      <li class="build-item"><span class="build-num">10</span><div class="build-text"><strong>Save your system instruction before you leave ✓</strong><p>Make sure it is saved to your own device. The sandbox closes when the session ends.</p></div></li>
+      <li class="build-item"><span class="build-num">10</span><div class="build-text"><strong>Save everything before you leave</strong><p>Your Agent Brief: click <strong>Save Brief</strong> on Step 1 above. Your system instruction: copied into a Word document or notes app. Both are yours to keep — the sandbox closes when the session ends, your documents do not.</p></div></li>
     </ul>
 
     <div class="callout callout-success">
@@ -490,19 +504,20 @@ function getChecked() {
     .map(id => document.getElementById(id).parentElement.querySelector('span').textContent.trim());
 }
 
-function compileBrief() {
+function buildBriefText() {
   const ticks = getChecked();
-  const brief = [
-    'AGENT BRIEF — UiLab Open House · July 2026',
-    '─'.repeat(52),
+  return [
+    'AGENT BRIEF',
+    'UiLab Open House \u00b7 July 2026',
+    '='.repeat(52),
     '',
-    'PART 1 — DISCOVER YOUR OPPORTUNITY',
+    'PART 1 \u2014 DISCOVER YOUR OPPORTUNITY',
     '',
     'A. Tasks I do most regularly:',
     val('f-tasks') || '(not completed)',
     '',
     'B. Criteria that apply:',
-    ticks.length ? ticks.map(t => '✓  ' + t).join('\n') : '(none ticked)',
+    ticks.length ? ticks.map(function(t){ return '\u2713  ' + t; }).join('\n') : '(none selected)',
     '',
     'C. Time currently spent:',
     val('f-time') || '(not completed)',
@@ -510,8 +525,8 @@ function compileBrief() {
     'D. The task I am designing my digital colleague for:',
     val('f-winner') || '(not completed)',
     '',
-    '─'.repeat(52),
-    'PART 2 — DESIGN MY DIGITAL COLLEAGUE',
+    '='.repeat(52),
+    'PART 2 \u2014 DESIGN MY DIGITAL COLLEAGUE',
     '',
     '1. Agent name:',
     val('f-name') || '(not completed)',
@@ -531,13 +546,19 @@ function compileBrief() {
     '5. What the agent should produce:',
     val('f-output') || '(not completed)',
     '',
-    '6. Non-negotiables — what the human still decides:',
+    '6. Non-negotiables \u2014 what the human still decides:',
     val('f-human') || '(not completed)',
     '',
     '7. Success looks like:',
     val('f-success') || '(not completed)',
+    '',
+    '='.repeat(52),
+    'Saved from UiLab Resource Hub \u00b7 July 2026',
   ].join('\n');
+}
 
+function compileBrief() {
+  const brief = buildBriefText();
   return [
     'I have completed an Agent Brief for a Microsoft 365 declarative agent. Use it to write a complete system instruction ready to paste into M365 Copilot Agent Builder.',
     '',
@@ -562,20 +583,37 @@ function updatePreview() {
 }
 
 function copyBrief(btn) {
-  const text = compileBrief();
-  navigator.clipboard.writeText(text).then(() => {
+  var text = compileBrief();
+  navigator.clipboard.writeText(text).then(function() {
     btn.textContent = 'Copied!';
     btn.classList.add('copied');
-    setTimeout(() => { btn.textContent = 'Copy Brief'; btn.classList.remove('copied'); }, 2500);
+    setTimeout(function() { btn.textContent = 'Copy Brief'; btn.classList.remove('copied'); }, 2500);
   });
 }
 
-// Live update preview as user types
+function downloadBrief() {
+  var brief = buildBriefText();
+  var agentName = (val('f-name') || 'Agent Brief').replace(/[^a-zA-Z0-9 _\-]/g, '').trim() || 'Agent Brief';
+  var filename = agentName + ' \u2014 Agent Brief \u2014 July 2026.txt';
+  var blob = new Blob([brief], { type: 'text/plain;charset=utf-8' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  var btn = document.getElementById('dlBtn');
+  btn.textContent = 'Saved!';
+  setTimeout(function() { btn.textContent = 'Save Brief'; }, 2500);
+}
+
 document.addEventListener('input', updatePreview);
 document.addEventListener('change', updatePreview);
 window.addEventListener('load', updatePreview);
 
-window.addEventListener('scroll', () => {
+window.addEventListener('scroll', function() {
   document.getElementById('btt').classList.toggle('show', window.scrollY > 300);
 });
 </script>
