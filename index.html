@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>UiLab Resource Hub — July 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/docx@8.5.0/build/index.js"></script>
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body { background-color:#013053; color:#F0EDE8; font-family:'PP Neue Montreal','Inter','Helvetica Neue',Arial,sans-serif; line-height:1.6; min-height:100vh; }
@@ -274,7 +273,7 @@
         <span class="prompt-label-txt">Your conversion prompt — ready to paste into M365 Copilot (Work mode)</span>
         <div style="display:flex;gap:8px;flex-shrink:0;">
           <button class="copy-btn" id="copyBtn" onclick="copyBrief(this)">Copy Brief</button>
-          <button class="copy-btn" id="dlBtn" onclick="downloadBrief()" style="background:rgba(62,207,160,0.15);border-color:rgba(62,207,160,0.4);color:#3ECFA0;">Download Brief (.docx)</button>
+          <button class="copy-btn" id="dlBtn" onclick="downloadBrief()" style="background:rgba(62,207,160,0.15);border-color:rgba(62,207,160,0.4);color:#3ECFA0;">Download Brief (.doc)</button>
         </div>
       </div>
       <div class="prompt-text" id="preview">Fill in the fields above, then click Copy Brief to generate your conversion prompt.</div>
@@ -593,166 +592,88 @@ function copyBrief(btn) {
 }
 
 function downloadBrief() {
-  // Check docx library loaded
-  var lib = window.docx;
-  if (!lib) {
-    alert('Word document library is still loading. Please wait a moment and try again.');
-    return;
-  }
-
   var btn = document.getElementById('dlBtn');
   btn.textContent = 'Generating...';
 
   try {
     var agentName = (val('f-name') || 'Agent Brief').replace(/[^a-zA-Z0-9 _-]/g, '').trim() || 'Agent Brief';
     var ticks = getChecked();
-    var BURG = '4C0037', SKY = '005A8C', SUM = 'CC4F1C', MID = '3A1A08';
 
-    function makeField(label, value) {
-      var lines = (value || '(not completed)').split('\n');
-      return new lib.Table({
-        width: { size: 9200, type: lib.WidthType.DXA },
-        columnWidths: [9200],
-        rows: [
-          new lib.TableRow({ children: [new lib.TableCell({
-            width: { size: 9200, type: lib.WidthType.DXA },
-            shading: { type: lib.ShadingType.CLEAR, fill: 'E8F0F8' },
-            margins: { top: 60, bottom: 60, left: 120, right: 120 },
-            borders: {
-              top: { style: lib.BorderStyle.SINGLE, size: 4, color: 'AAAAAA' },
-              bottom: { style: lib.BorderStyle.NONE },
-              left: { style: lib.BorderStyle.SINGLE, size: 12, color: SKY },
-              right: { style: lib.BorderStyle.SINGLE, size: 4, color: 'AAAAAA' },
-            },
-            children: [new lib.Paragraph({
-              children: [new lib.TextRun({ text: label.toUpperCase(), color: SKY, size: 17, font: 'Courier New', bold: true, characterSpacing: 20 })]
-            })]
-          })] }),
-          new lib.TableRow({ children: [new lib.TableCell({
-            width: { size: 9200, type: lib.WidthType.DXA },
-            shading: { type: lib.ShadingType.CLEAR, fill: 'FAFAFA' },
-            margins: { top: 80, bottom: 100, left: 120, right: 120 },
-            borders: {
-              top: { style: lib.BorderStyle.NONE },
-              bottom: { style: lib.BorderStyle.SINGLE, size: 4, color: 'AAAAAA' },
-              left: { style: lib.BorderStyle.SINGLE, size: 12, color: SKY },
-              right: { style: lib.BorderStyle.SINGLE, size: 4, color: 'AAAAAA' },
-            },
-            children: lines.map(function(line) {
-              return new lib.Paragraph({
-                children: [new lib.TextRun({ text: line || ' ', color: MID, size: 20, font: 'Arial' })],
-                spacing: { before: 20, after: 20 }
-              });
-            })
-          })] })
-        ],
-        margins: { top: 80, bottom: 80 }
-      });
+    function rtfEsc(str) {
+      if (!str) return '(not completed)';
+      return str
+        .replace(/\\/g, '\\\\')
+        .replace(/\{/g, '\\{')
+        .replace(/\}/g, '\\}')
+        .replace(/\n/g, '\\par ')
+        .replace(/[^\x00-\x7F]/g, function(c) {
+          return '\\u' + c.charCodeAt(0) + '?';
+        });
     }
 
-    function sp() {
-      return new lib.Paragraph({ children: [new lib.TextRun({ text: '' })], spacing: { before: 0, after: 80 } });
+    function sect(label, value) {
+      return '{\\pard\\sb120\\sa0\\f1\\fs17\\cf3\\b ' + label.toUpperCase() + '\\b0\\par}' +
+             '{\\pard\\sb40\\sa120\\f0\\fs20\\cf1 ' + rtfEsc(value) + '\\par}';
     }
 
-    function eyebrow(text) {
-      return new lib.Paragraph({
-        children: [new lib.TextRun({ text: text.toUpperCase(), color: SUM, size: 17, font: 'Arial', bold: true, characterSpacing: 40 })],
-        spacing: { before: 280, after: 60 }
-      });
+    function hdg(text) {
+      return '{\\pard\\sb280\\sa80\\f0\\fs30\\b\\cf2 ' + rtfEsc(text) + '\\b0\\par}' +
+             '{\\pard\\sb0\\sa160\\brdrb\\brdrs\\brdrw10\\brdrcf2 \\par}';
     }
 
-    function heading(text) {
-      return new lib.Paragraph({
-        children: [new lib.TextRun({ text: text, color: BURG, size: 30, font: 'Arial', bold: true })],
-        spacing: { before: 60, after: 100 },
-        border: { bottom: { style: lib.BorderStyle.SINGLE, size: 4, color: BURG } }
-      });
+    function ebrow(text) {
+      return '{\\pard\\sb200\\sa60\\f1\\fs17\\b\\cf4 ' + text.toUpperCase() + '\\b0\\par}';
     }
 
-    var children = [
-      new lib.Paragraph({
-        children: [new lib.TextRun({ text: 'Agent Brief', color: BURG, size: 52, font: 'Arial', bold: true })],
-        spacing: { before: 0, after: 60 }
-      }),
-      new lib.Paragraph({
-        children: [new lib.TextRun({ text: agentName, color: SKY, size: 30, font: 'Arial', bold: true })],
-        spacing: { before: 0, after: 60 }
-      }),
-      new lib.Paragraph({
-        children: [new lib.TextRun({ text: 'UiLab Open House  ·  July 2026', color: '666666', size: 18, font: 'Courier New' })],
-        spacing: { before: 0, after: 280 }
-      }),
+    var ticksText = ticks.length
+      ? ticks.map(function(t){ return '\u2713  ' + t; }).join('\n')
+      : '(none selected)';
 
-      eyebrow('Part 1 — Discover your opportunity'),
-      heading('Your task'),
-      sp(),
-      makeField('A. Tasks I do most regularly', val('f-tasks')),
-      sp(),
-      makeField('B. Criteria that apply', ticks.length ? ticks.map(function(t){ return '✓  ' + t; }).join('\n') : '(none selected)'),
-      sp(),
-      makeField('C. Time currently spent on this task', val('f-time')),
-      sp(),
-      makeField('D. The task I am designing my digital colleague for', val('f-winner')),
-      sp(),
+    var rtf = [
+      '{\\rtf1\\ansi\\deff0',
+      '{\\fonttbl{\\f0\\froman Arial;}{\\f1\\fmodern Courier New;}}',
+      '{\\colortbl ;\\red58\\green26\\blue8;\\red76\\green0\\blue55;\\red0\\green90\\blue140;\\red204\\green79\\blue28;}',
+      '\\margl1440\\margr1440\\margt1440\\margb1440',
+      '{\\pard\\sb0\\sa80\\f0\\fs52\\b\\cf2 Agent Brief\\b0\\par}',
+      '{\\pard\\sb0\\sa60\\f0\\fs30\\b\\cf3 ' + rtfEsc(agentName) + '\\b0\\par}',
+      '{\\pard\\sb0\\sa320\\f1\\fs18\\cf3 UiLab Open House  \\u183? July 2026\\par}',
+      ebrow('Part 1 \\u8212? Discover your opportunity'),
+      hdg('Your task'),
+      sect('A. Tasks I do most regularly', val('f-tasks')),
+      sect('B. Criteria that apply', ticksText),
+      sect('C. Time currently spent on this task', val('f-time')),
+      sect('D. The task I am designing my digital colleague for', val('f-winner')),
+      ebrow('Part 2 \\u8212? Design your digital colleague'),
+      hdg('Your agent design'),
+      sect('1. Agent name', val('f-name')),
+      sect('Who uses it and how often', val('f-user')),
+      sect('2. Current process and pain points', val('f-process')),
+      sect('3. Decision points', val('f-decisions')),
+      sect('4. Knowledge sources', val('f-sources')),
+      sect('5. What the agent should produce', val('f-output')),
+      sect('6. Non-negotiables \\u8212? what the human still decides', val('f-human')),
+      sect('7. Success looks like...', val('f-success')),
+      '{\\pard\\sb400\\sa0\\qc\\f1\\fs16\\cf3 UiLab Open House  \\u183? July 2026\\par}',
+      '}'
+    ].join('\n');
 
-      eyebrow('Part 2 — Design your digital colleague'),
-      heading('Your agent design'),
-      sp(),
-      makeField('1. Agent name', val('f-name')),
-      sp(),
-      makeField('Who uses it and how often', val('f-user')),
-      sp(),
-      makeField('2. Current process and pain points', val('f-process')),
-      sp(),
-      makeField('3. Decision points', val('f-decisions')),
-      sp(),
-      makeField('4. Knowledge sources', val('f-sources')),
-      sp(),
-      makeField('5. What the agent should produce', val('f-output')),
-      sp(),
-      makeField('6. Non-negotiables — what the human still decides', val('f-human')),
-      sp(),
-      makeField('7. Success looks like...', val('f-success')),
-      sp(), sp(),
-      new lib.Paragraph({
-        children: [new lib.TextRun({ text: 'UiLab Open House  ·  July 2026', color: SKY, size: 16, font: 'Courier New' })],
-        alignment: lib.AlignmentType.CENTER
-      })
-    ];
+    var blob = new Blob([rtf], { type: 'application/msword' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = agentName + ' - Agent Brief - July 2026.doc';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
 
-    var doc = new lib.Document({
-      sections: [{
-        properties: {
-          page: {
-            size: { width: 11906, height: 16838 },
-            margin: { top: 1080, bottom: 1080, left: 1080, right: 1080 }
-          }
-        },
-        children: children
-      }]
-    });
-
-    lib.Packer.toBlob(doc).then(function(blob) {
-      var url = URL.createObjectURL(blob);
-      var a = document.createElement('a');
-      a.href = url;
-      a.download = agentName + ' — Agent Brief — July 2026.docx';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-      btn.textContent = 'Downloaded!';
-      setTimeout(function() { btn.textContent = 'Download Brief (.docx)'; }, 2500);
-    }).catch(function(err) {
-      console.error('DOCX generation error:', err);
-      btn.textContent = 'Download Brief (.docx)';
-      alert('Could not generate Word document: ' + err.message);
-    });
+    btn.textContent = 'Downloaded!';
+    setTimeout(function() { btn.textContent = 'Download Brief (.doc)'; }, 2500);
 
   } catch(err) {
     console.error('downloadBrief error:', err);
-    btn.textContent = 'Download Brief (.docx)';
-    alert('Error: ' + err.message);
+    btn.textContent = 'Download Brief (.doc)';
+    alert('Download failed: ' + err.message);
   }
 }
 
